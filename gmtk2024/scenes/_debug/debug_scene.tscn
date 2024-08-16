@@ -1,3 +1,7 @@
-[gd_scene format=3 uid="uid://bqtt4wrgkvngo"]
+[gd_scene load_steps=2 format=3 uid="uid://bqtt4wrgkvngo"]
+
+[ext_resource type="PackedScene" uid="uid://bdlisbe2q6yl2" path="res://scenes/game/characters/rat/rat.tscn" id="1_hcgbd"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="Rat" parent="." instance=ExtResource("1_hcgbd")]

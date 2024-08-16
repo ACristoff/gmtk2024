@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://dep41i7inbx8y"]
+[gd_scene load_steps=15 format=3 uid="uid://dep41i7inbx8y"]
 
 [ext_resource type="Texture2D" uid="uid://3jl6lrumef33" path="res://scenes/game/characters/wormo/Idle (32x32).png" id="1_6kpqf"]
+[ext_resource type="Script" path="res://scenes/game/characters/wormo/wormo.gd" id="1_q6aup"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h7c12"]
 atlas = ExtResource("1_6kpqf")
@@ -88,6 +89,7 @@ animations = [{
 }]
 
 [node name="Wormo" type="CharacterBody2D"]
+script = ExtResource("1_q6aup")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_1w3yq")

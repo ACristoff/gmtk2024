@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=3 uid="uid://bdlisbe2q6yl2"]
+
+[ext_resource type="Texture2D" uid="uid://csf2odtjma7o6" path="res://assets/characters/rat/rat.png" id="1_j53td"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6x076"]
+size = Vector2(54, 16)
+
+[sub_resource type="Animation" id="Animation_lr04t"]
+resource_name = "attack"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [4, 8, 1, 5, 9, 2, 6, 10, 3, 7, 11]
+}
+
+[sub_resource type="Animation" id="Animation_cmxjl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sochv"]
+_data = {
+"RESET": SubResource("Animation_cmxjl"),
+"attack": SubResource("Animation_lr04t")
+}
+
+[node name="Rat" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(7, -12)
+texture = ExtResource("1_j53td")
+hframes = 4
+vframes = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(10, -8)
+shape = SubResource("RectangleShape2D_6x076")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_sochv")
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+visible = false
