@@ -1,0 +1,97 @@
+[gd_scene load_steps=14 format=3 uid="uid://dep41i7inbx8y"]
+
+[ext_resource type="Texture2D" uid="uid://3jl6lrumef33" path="res://scenes/game/characters/wormo/Idle (32x32).png" id="1_6kpqf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h7c12"]
+atlas = ExtResource("1_6kpqf")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wq2xo"]
+atlas = ExtResource("1_6kpqf")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ja7fw"]
+atlas = ExtResource("1_6kpqf")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bsbt7"]
+atlas = ExtResource("1_6kpqf")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uatwp"]
+atlas = ExtResource("1_6kpqf")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4n8iv"]
+atlas = ExtResource("1_6kpqf")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kiobn"]
+atlas = ExtResource("1_6kpqf")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8x5ym"]
+atlas = ExtResource("1_6kpqf")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_77mq2"]
+atlas = ExtResource("1_6kpqf")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_144t7"]
+atlas = ExtResource("1_6kpqf")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujgys"]
+atlas = ExtResource("1_6kpqf")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1w3yq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h7c12")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wq2xo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ja7fw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bsbt7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uatwp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4n8iv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kiobn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8x5ym")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_77mq2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_144t7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ujgys")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Wormo" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_1w3yq")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
