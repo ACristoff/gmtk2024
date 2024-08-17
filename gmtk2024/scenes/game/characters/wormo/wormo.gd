@@ -7,14 +7,13 @@ class_name Player
 
 @export var max_jump := 500
 @export var jump_acceleration = 5
-var coyote_timer = 0.3
 
 var active := true
 var is_charging := false
 var is_maxxed = jump_force > max_jump
 
 @onready var animated_sprite = $AnimatedSprite2D
-##TODO SFX
+##TODO SFX 
 
 func jump_release(force):
 	velocity.y = -force
