@@ -15,9 +15,23 @@ var is_maxxed = jump_force > max_jump
 var direction = 0
 
 @onready var animated_sprite = $AnimatedSprite2D
+@onready var grunts_sfx = [
+	preload("res://assets/sounds/Wormo Grunt 1.wav"), 
+	preload("res://assets/sounds/Wormo Grunt 2.wav"), 
+	preload("res://assets/sounds/Wormo Grunt 3.wav")
+]
+@onready var sproing_sfx = [
+	preload("res://assets/sounds/Wormo Sproing.wav"),
+	preload("res://assets/sounds/Wormo Sproing Crunchy.wav"),
+]
 ##TODO SFX 
 ##TODO visual bug where holding direction and jump loads running animation
 ##TODO forward movement while jumping is locked to direction
+
+#func jump(force):
+	#GlobalTheme.play_sfx(jump_sfx, 0.0)
+	#velocity.y = -force
+	#coyote_timer = 0
 
 func jump_release(force):
 	velocity.y = -force
@@ -25,6 +39,12 @@ func jump_release(force):
 		velocity.x = force * jump_x_damp
 	else:
 		velocity.x = (force * jump_x_damp) * -1
+	if force < max_jump / 2:
+		GlobalTheme.play_sfx(sproing_sfx[0], 0.0)
+		pass
+	else:
+		GlobalTheme.play_sfx(sproing_sfx[1], 0.0)
+		pass
 
 func _physics_process(delta):
 	if is_on_floor() == false:
@@ -45,6 +65,10 @@ func _physics_process(delta):
 		if Input.is_action_pressed("jump") && is_on_floor() == true:
 			velocity.x = 0
 			is_charging = true
+			if is_charging == true && jump_force == 100 + (jump_acceleration * 24):
+				var random = randi_range(1,grunts_sfx.size()) - 1
+				print(random)
+				GlobalTheme.play_sfx(grunts_sfx[random], 0.0)
 			if jump_force < max_jump:
 				jump_force += jump_acceleration
 				pass
