@@ -5,12 +5,14 @@ class_name Player
 @export var gravity := 500
 @export var jump_force := 100
 
-@export var coyote_time = 0.3
+#@export var coyote_time = 0.3
+@export var max_jump := 500
 @export var jump_acceleration = 5
 var coyote_timer = 0.3
 
-var active = true
-var is_charging = false
+var active := true
+var is_charging := false
+var is_maxxed = jump_force > max_jump
 
 @onready var animated_sprite = $AnimatedSprite2D
 ##TODO SFX
@@ -22,7 +24,10 @@ func jump_release(force):
 func _physics_process(delta):
 	if is_on_floor() == false:
 		velocity.y += gravity * delta
-		#coyote_timer -= 1 * delta
+	if velocity.y > 0:
+		animated_sprite.flip_v = true
+	else:
+		animated_sprite.flip_v = false
 	if velocity.y > 500:
 		velocity.y = 500
 	var direction = 0
@@ -35,9 +40,13 @@ func _physics_process(delta):
 			pass
 		if Input.is_action_pressed("jump"):
 			is_charging = true
-			jump_force += jump_acceleration
+			if jump_force < max_jump:
+				jump_force += jump_acceleration
+				pass
 			pass
-		direction = Input.get_axis("move_left", "move_right")
+		if is_charging == false:
+			direction = Input.get_axis("move_left", "move_right")
+			pass
 		if direction != 0:
 			animated_sprite.flip_h = (direction == -1)
 	velocity.x = direction * speed

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dep41i7inbx8y"]
+[gd_scene load_steps=26 format=3 uid="uid://dep41i7inbx8y"]
 
 [ext_resource type="Script" path="res://scenes/game/characters/wormo/wormo.gd" id="1_q6aup"]
 [ext_resource type="Texture2D" uid="uid://cvekmxu325h2y" path="res://assets/characters/wormyparasprite.png" id="3_307m4"]
@@ -19,7 +19,11 @@ region = Rect2(448, 0, 32, 32)
 atlas = ExtResource("3_307m4")
 region = Rect2(480, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_c2vm2"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_v36s8"]
+atlas = ExtResource("3_307m4")
+region = Rect2(512, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fq0v4"]
 atlas = ExtResource("3_307m4")
 region = Rect2(544, 0, 32, 32)
 
@@ -104,9 +108,12 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_c2vm2")
+"texture": SubResource("AtlasTexture_v36s8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fq0v4")
 }],
-"loop": false,
+"loop": true,
 "name": &"fall",
 "speed": 5.0
 }, {
@@ -183,8 +190,9 @@ script = ExtResource("1_q6aup")
 position = Vector2(2, -26)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_1w3yq")
-animation = &"charge"
+animation = &"fall"
 autoplay = "idle"
+frame_progress = 0.0521683
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
