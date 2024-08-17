@@ -6,6 +6,7 @@ class_name Player
 @export var jump_force := 100
 
 @export var max_jump := 400
+#This should be named jump_charge_acceleration but I'm too lazy
 @export var jump_acceleration = 5
 @export var jump_x_damp = 0.2
 
@@ -13,13 +14,14 @@ var active := true
 var is_charging := false
 var is_maxxed = jump_force > max_jump
 var direction = 0
+#saving the previous velocity for wall bouncing, we are now too invested to refactor the movement lmao
 var prev_velocityX = 0
 
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var grunts_sfx = [
 	preload("res://assets/sounds/Wormo Grunt 1.wav"), 
 	preload("res://assets/sounds/Wormo Grunt 2.wav"), 
-	preload("res://assets/sounds/Wormo Grunt 3.wav")
+	#preload("res://assets/sounds/Wormo Grunt 3.wav")
 ]
 @onready var sproing_sfx = [
 	preload("res://assets/sounds/Wormo Sproing.wav"),
@@ -49,7 +51,6 @@ func jump_release(force):
 
 func _physics_process(delta):
 	if is_on_wall() == true && velocity.y < 0:
-		prints("I hit a wall!", velocity.x, prev_velocityX)
 		velocity.x = prev_velocityX * -1
 	if is_on_floor() == false:
 		velocity.y += gravity * delta
@@ -94,9 +95,7 @@ func update_animations(direction):
 		shake()
 	if is_on_floor():
 		if is_charging == true && animated_sprite.animation != "charge":
-			#animated_sprite.stop()
 			animated_sprite.play("charge")
-			#return
 		if direction == 0:
 			if is_charging == false:
 				animated_sprite.play("idle")
