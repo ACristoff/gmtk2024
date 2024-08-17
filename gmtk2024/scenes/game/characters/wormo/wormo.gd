@@ -55,8 +55,6 @@ func _physics_process(delta):
 	pass
 
 func update_animations(direction):
-		#if is_charging == true:
-		#animated_sprite.play("charge")
 	if is_on_floor():
 		if direction == 0:
 			if is_charging == true && animated_sprite.animation != "charge":
