@@ -31,6 +31,7 @@ func _physics_process(delta):
 	velocity.x = direction * speed
 	if active == true:
 		if Input.is_action_just_released("jump") && is_on_floor() == true:
+			animated_sprite.offset = Vector2(0,0)
 			jump_release(jump_force)
 			is_charging = false
 			jump_force = 100
@@ -52,6 +53,8 @@ func _physics_process(delta):
 	pass
 
 func update_animations(direction):
+	if jump_force == max_jump:
+		shake()
 	if is_on_floor():
 		if direction == 0:
 			if is_charging == true && animated_sprite.animation != "charge":
@@ -67,6 +70,15 @@ func update_animations(direction):
 		else:
 			animated_sprite.play("fall")
 		pass
+	pass
+
+func shake():
+	var tween = get_tree().create_tween()
+	var shake = 0.1
+	var random = Vector2(randi_range(0,1), randi_range(0, 1))
+	
+	tween.tween_property(animated_sprite, "offset", random, 0.1)
+	prints("shake that shit!", random)
 	pass
 
 # Called when the node enters the scene tree for the first time.
