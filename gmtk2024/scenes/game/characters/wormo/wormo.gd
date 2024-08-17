@@ -5,7 +5,6 @@ class_name Player
 @export var gravity := 500
 @export var jump_force := 100
 
-#@export var coyote_time = 0.3
 @export var max_jump := 500
 @export var jump_acceleration = 5
 var coyote_timer = 0.3
@@ -19,7 +18,6 @@ var is_maxxed = jump_force > max_jump
 
 func jump_release(force):
 	velocity.y = -force
-	#coyote_timer = 0
 
 func _physics_process(delta):
 	if is_on_floor() == false:
