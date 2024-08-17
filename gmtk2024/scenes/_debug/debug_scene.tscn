@@ -1,13 +1,17 @@
-[gd_scene load_steps=7 format=4 uid="uid://bqtt4wrgkvngo"]
+[gd_scene load_steps=10 format=4 uid="uid://bqtt4wrgkvngo"]
 
 [ext_resource type="PackedScene" uid="uid://bdlisbe2q6yl2" path="res://scenes/game/characters/rat/rat.tscn" id="1_hcgbd"]
+[ext_resource type="Script" path="res://scenes/_debug/level_base.gd" id="1_huk3f"]
 [ext_resource type="PackedScene" uid="uid://c0stt80wn3u3f" path="res://scenes/game/world/tile_map.tscn" id="1_xi1eb"]
 [ext_resource type="PackedScene" uid="uid://dep41i7inbx8y" path="res://scenes/game/characters/wormo/wormo.tscn" id="2_dhfww"]
 [ext_resource type="Texture2D" uid="uid://bnvyx1nod3jpj" path="res://assets/environment/ratfurback.png" id="3_8vjjh"]
 [ext_resource type="Texture2D" uid="uid://bxnynn7pnkhon" path="res://assets/environment/ratfurfront.png" id="5_7yf57"]
 [ext_resource type="Texture2D" uid="uid://cvoihqyuitsbl" path="res://assets/environment/ratfurmiddle.png" id="6_5uf1y"]
+[ext_resource type="PackedScene" uid="uid://clbj86jw7twd2" path="res://scenes/game/world/deathzone.tscn" id="7_rq7q6"]
+[ext_resource type="PackedScene" uid="uid://57dkghi1trmf" path="res://scenes/game/world/start.tscn" id="9_suolp"]
 
 [node name="DebugLevel" type="Node2D"]
+script = ExtResource("1_huk3f")
 
 [node name="Rat" parent="." instance=ExtResource("1_hcgbd")]
 position = Vector2(-462, 56)
@@ -54,3 +58,9 @@ z_index = -5
 texture_filter = 3
 scale = Vector2(2, 2)
 texture = ExtResource("6_5uf1y")
+
+[node name="Deathzone" parent="." instance=ExtResource("7_rq7q6")]
+position = Vector2(-887, 324)
+
+[node name="Start" parent="." instance=ExtResource("9_suolp")]
+position = Vector2(-348, -63)

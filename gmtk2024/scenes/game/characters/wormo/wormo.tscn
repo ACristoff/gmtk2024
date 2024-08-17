@@ -181,7 +181,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_85h08"]
 size = Vector2(20, 48)
 
-[node name="Wormo" type="CharacterBody2D"]
+[node name="Wormo" type="CharacterBody2D" groups=["player"]]
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_q6aup")
