@@ -1,3 +1,15 @@
-[gd_scene format=3 uid="uid://bqtt4wrgkvngo"]
+[gd_scene load_steps=4 format=4 uid="uid://bqtt4wrgkvngo"]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource type="PackedScene" uid="uid://bdlisbe2q6yl2" path="res://scenes/game/characters/rat/rat.tscn" id="1_hcgbd"]
+[ext_resource type="PackedScene" uid="uid://c0stt80wn3u3f" path="res://scenes/game/world/tile_map.tscn" id="1_xi1eb"]
+[ext_resource type="PackedScene" uid="uid://dep41i7inbx8y" path="res://scenes/game/characters/wormo/wormo.tscn" id="2_dhfww"]
+
+[node name="DebugLevel" type="Node2D"]
+
+[node name="Rat" parent="." instance=ExtResource("1_hcgbd")]
+
+[node name="Wormo" parent="." instance=ExtResource("2_dhfww")]
+position = Vector2(-70, -16)
+
+[node name="TileMapLayer" parent="." instance=ExtResource("1_xi1eb")]
+tile_map_data = PackedByteArray("AAD6/wAAAAAAAAAAAAD6/wEAAAAAAAEAAAD6/wIAAAAAAAIAAAD7/wAAAAABAAAAAAD7/wEAAAABAAEAAAD7/wIAAAABAAIAAAD8/wAAAAACAAAAAAD8/wEAAAACAAEAAAD8/wIAAAACAAIAAAD1/wAAAAAAAAAAAAD1/wEAAAAAAAEAAAD1/wIAAAAAAAIAAAD2/wAAAAABAAAAAAD2/wEAAAABAAEAAAD2/wIAAAABAAIAAAD3/wAAAAACAAAAAAD3/wEAAAACAAEAAAD3/wIAAAACAAIAAADv/wAAAAAAAAAAAADv/wEAAAAAAAEAAADv/wIAAAAAAAIAAADw/wAAAAABAAAAAADw/wEAAAABAAEAAADw/wIAAAABAAIAAADx/wAAAAACAAAAAADx/wEAAAACAAEAAADx/wIAAAACAAIAAAA=")
