@@ -172,7 +172,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_85h08"]
-size = Vector2(12, 23.5)
+size = Vector2(20, 51.5)
 
 [node name="Wormo" type="CharacterBody2D"]
 collision_layer = 2
@@ -180,14 +180,14 @@ collision_mask = 5
 script = ExtResource("1_q6aup")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -14)
+position = Vector2(2, -28)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_1w3yq")
 animation = &"jump_windup"
 autoplay = "idle"
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2, 2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, -12.25)
+position = Vector2(2, -26.25)
 shape = SubResource("RectangleShape2D_85h08")
