@@ -30,7 +30,7 @@ func _physics_process(delta):
 			jump(jump_force)
 			pass
 		if is_on_floor_only() && !Input.is_action_just_pressed("jump"):
-			coyote_timer = 0.3
+			coyote_timer = coyote_time
 		direction = Input.get_axis("move_left", "move_right")
 		if direction != 0:
 			animated_sprite.flip_h = (direction == -1)
