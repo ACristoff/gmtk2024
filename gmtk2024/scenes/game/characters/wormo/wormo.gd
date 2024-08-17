@@ -33,12 +33,12 @@ func _physics_process(delta):
 	var direction = 0
 	velocity.x = direction * speed
 	if active == true:
-		if Input.is_action_just_released("jump"):
+		if Input.is_action_just_released("jump") && is_on_floor() == true:
 			jump_release(jump_force)
 			is_charging = false
 			jump_force = 100
 			pass
-		if Input.is_action_pressed("jump"):
+		if Input.is_action_pressed("jump") && is_on_floor() == true:
 			is_charging = true
 			if jump_force < max_jump:
 				jump_force += jump_acceleration
