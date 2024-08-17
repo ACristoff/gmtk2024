@@ -13,6 +13,7 @@ var active := true
 var is_charging := false
 var is_maxxed = jump_force > max_jump
 var direction = 0
+var prev_velocityX = 0
 
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var grunts_sfx = [
@@ -47,6 +48,9 @@ func jump_release(force):
 		pass
 
 func _physics_process(delta):
+	if is_on_wall() == true && velocity.y < 0:
+		prints("I hit a wall!", velocity.x, prev_velocityX)
+		velocity.x = prev_velocityX * -1
 	if is_on_floor() == false:
 		velocity.y += gravity * delta
 	if velocity.y > 0:
@@ -67,7 +71,7 @@ func _physics_process(delta):
 			is_charging = true
 			if is_charging == true && jump_force == 100 + (jump_acceleration * 24):
 				var random = randi_range(1,grunts_sfx.size()) - 1
-				print(random)
+				#print(random)
 				GlobalTheme.play_sfx(grunts_sfx[random], 0.0)
 			if jump_force < max_jump:
 				jump_force += jump_acceleration
@@ -80,6 +84,7 @@ func _physics_process(delta):
 			animated_sprite.flip_h = (direction == -1)
 	if is_on_floor() == true && Input.is_action_just_released("jump") == false && Input.is_action_pressed("jump") == false:
 		velocity.x = direction * speed
+	prev_velocityX = velocity.x
 	move_and_slide()
 	update_animations(direction)
 	pass
