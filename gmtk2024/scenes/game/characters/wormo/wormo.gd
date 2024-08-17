@@ -14,9 +14,11 @@ var is_maxxed = jump_force > max_jump
 
 @onready var animated_sprite = $AnimatedSprite2D
 ##TODO SFX 
+##TODO lock direction
 
 func jump_release(force):
 	velocity.y = -force
+	velocity.x = -force
 
 func _physics_process(delta):
 	if is_on_floor() == false:
