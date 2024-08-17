@@ -16,10 +16,10 @@ var direction = 0
 
 @onready var animated_sprite = $AnimatedSprite2D
 ##TODO SFX 
-##TODO lock direction
+##TODO visual bug where holding direction and jump loads running animation
+##TODO forward movement while jumping is locked to direction
 
 func jump_release(force):
-	#print(direction)
 	velocity.y = -force
 	if animated_sprite.flip_h == false:
 		velocity.x = force * jump_x_damp
@@ -64,12 +64,14 @@ func update_animations(direction):
 	if jump_force == max_jump:
 		shake()
 	if is_on_floor():
+		if is_charging == true && animated_sprite.animation != "charge":
+			#animated_sprite.stop()
+			animated_sprite.play("charge")
+			#return
 		if direction == 0:
-			if is_charging == true && animated_sprite.animation != "charge":
-				animated_sprite.play("charge")
-			elif is_charging == false:
+			if is_charging == false:
 				animated_sprite.play("idle")
-		else:
+		elif is_charging == false:
 			animated_sprite.play("run")
 		pass
 	else:
