@@ -1,30 +1,22 @@
 extends CharacterBody2D
 class_name Player
 
-@export var speed := 75.0
+@export var speed := 125.0
 @export var gravity := 500
 @export var jump_force := 100
 
-@export var max_jump := 400
+@export var max_jump := 500
 @export var jump_acceleration = 5
-@export var jump_x_damp = 0.2
 
 var active := true
 var is_charging := false
 var is_maxxed = jump_force > max_jump
-var direction = 0
 
 @onready var animated_sprite = $AnimatedSprite2D
 ##TODO SFX 
-##TODO lock direction
 
 func jump_release(force):
-	#print(direction)
 	velocity.y = -force
-	if animated_sprite.flip_h == false:
-		velocity.x = force * jump_x_damp
-	else:
-		velocity.x = (force * jump_x_damp) * -1
 
 func _physics_process(delta):
 	if is_on_floor() == false:
@@ -35,6 +27,8 @@ func _physics_process(delta):
 		animated_sprite.flip_v = false
 	if velocity.y > 500:
 		velocity.y = 500
+	var direction = 0
+	velocity.x = direction * speed
 	if active == true:
 		if Input.is_action_just_released("jump") && is_on_floor() == true:
 			animated_sprite.offset = Vector2(0,0)
@@ -43,7 +37,6 @@ func _physics_process(delta):
 			jump_force = 100
 			pass
 		if Input.is_action_pressed("jump") && is_on_floor() == true:
-			velocity.x = 0
 			is_charging = true
 			if jump_force < max_jump:
 				jump_force += jump_acceleration
@@ -54,8 +47,7 @@ func _physics_process(delta):
 			pass
 		if direction != 0:
 			animated_sprite.flip_h = (direction == -1)
-	if is_on_floor() == true && Input.is_action_just_released("jump") == false && Input.is_action_pressed("jump") == false:
-		velocity.x = direction * speed
+	velocity.x = direction * speed
 	move_and_slide()
 	update_animations(direction)
 	pass
@@ -86,7 +78,7 @@ func shake():
 	var random = Vector2(randi_range(0,1), randi_range(0, 1))
 	
 	tween.tween_property(animated_sprite, "offset", random, 0.1)
-	#prints("shake that shit!", random)
+	prints("shake that shit!", random)
 	pass
 
 # Called when the node enters the scene tree for the first time.
