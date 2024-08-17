@@ -185,8 +185,6 @@ size = Vector2(20, 48)
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_q6aup")
-speed = 75.0
-max_jump = 400
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 3
