@@ -30,8 +30,8 @@ repeat_times = 3
 
 [node name="Ratfurback" type="Sprite2D" parent="Parallax2D"]
 z_index = -10
-position = Vector2(-211, -64)
-scale = Vector2(3, 3)
+position = Vector2(-211, -368)
+scale = Vector2(3, 5.25185)
 texture = ExtResource("3_8vjjh")
 
 [node name="Parallax2D2" type="Parallax2D" parent="."]
@@ -42,6 +42,7 @@ repeat_size = Vector2(960, 0)
 repeat_times = 3
 
 [node name="Ratfurfront" type="Sprite2D" parent="Parallax2D2"]
+modulate = Color(0.866955, 0.8439, 0.87, 1)
 texture_filter = 3
 scale = Vector2(2, 2)
 texture = ExtResource("5_7yf57")
@@ -54,6 +55,7 @@ repeat_size = Vector2(960, 0)
 repeat_times = 3
 
 [node name="Ratfurmiddle" type="Sprite2D" parent="Parallax2D3"]
+modulate = Color(0.59, 0.5664, 0.58764, 1)
 z_index = -5
 texture_filter = 3
 scale = Vector2(2, 2)
