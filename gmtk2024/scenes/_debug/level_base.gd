@@ -20,8 +20,8 @@ func _ready():
 		player.global_position = start.get_spawn_pos()
 	death_zone.body_entered.connect(_on_deathzone_body_entered)
 
-func _on_deathzone_body_entered(body):
-	print("oopsy woopsy!")
+func _on_deathzone_body_entered(_body):
+	#print("oopsy woopsy!")
 	reset_player()
 	pass
 

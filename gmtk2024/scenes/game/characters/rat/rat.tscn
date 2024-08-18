@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bdlisbe2q6yl2"]
+[gd_scene load_steps=9 format=3 uid="uid://bdlisbe2q6yl2"]
 
 [ext_resource type="Script" path="res://scenes/game/characters/rat/rat.gd" id="1_imlk0"]
 [ext_resource type="Texture2D" uid="uid://csf2odtjma7o6" path="res://assets/characters/rat/rat.png" id="1_j53td"]
+[ext_resource type="PackedScene" uid="uid://chpyeaiw684kd" path="res://scenes/game/characters/base_monster_movement.tscn" id="3_8g2yn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6x076"]
 size = Vector2(54, 16)
@@ -70,3 +71,6 @@ libraries = {
 position = Vector2(48, -19)
 shape = SubResource("RectangleShape2D_d2jwd")
 debug_color = Color(0.935362, 0.187431, 0.439923, 0.42)
+
+[node name="BaseMonsterMovement" parent="." node_paths=PackedStringArray("actor") instance=ExtResource("3_8g2yn")]
+actor = NodePath("..")

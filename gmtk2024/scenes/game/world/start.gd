@@ -4,4 +4,3 @@ extends StaticBody2D
 
 func get_spawn_pos():
 	return spawnPos.global_position
-	pass

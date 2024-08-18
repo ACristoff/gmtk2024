@@ -28,13 +28,7 @@ var prev_velocityX = 0
 	preload("res://assets/sounds/Wormo Sproing Crunchy.wav"),
 ]
 ##TODO SFX 
-##TODO visual bug where holding direction and jump loads running animation
-##TODO forward movement while jumping is locked to direction
 
-#func jump(force):
-	#GlobalTheme.play_sfx(jump_sfx, 0.0)
-	#velocity.y = -force
-	#coyote_timer = 0
 
 func jump_release(force):
 	velocity.y = -force
@@ -90,13 +84,13 @@ func _physics_process(delta):
 	update_animations(direction)
 	pass
 
-func update_animations(direction):
+func update_animations(in_direction):
 	if jump_force == max_jump:
 		shake()
 	if is_on_floor():
 		if is_charging == true && animated_sprite.animation != "charge":
 			animated_sprite.play("charge")
-		if direction == 0:
+		if in_direction == 0:
 			if is_charging == false:
 				animated_sprite.play("idle")
 		elif is_charging == false:
@@ -112,18 +106,6 @@ func update_animations(direction):
 
 func shake():
 	var tween = get_tree().create_tween()
-	#var shake = 0.1
 	var random = Vector2(randi_range(0,1), randi_range(0, 1))
-	
 	tween.tween_property(animated_sprite, "offset", random, 0.1)
-	#prints("shake that shit!", random)
-	pass
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
 	pass
