@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://d8860reaf3b4"
-path="res://.godot/imported/Crang (Title).ttf-16d32782194211b24092bb4695f28c11.fontdata"
+path="res://.godot/imported/Crang (Title).ttf-309070213bd8ded81a6f4264955cafab.fontdata"
 
 [deps]
 
-source_file="res://assets/fonts/Crang (Title).ttf"
-dest_files=["res://.godot/imported/Crang (Title).ttf-16d32782194211b24092bb4695f28c11.fontdata"]
+source_file="res://assets/Ui/fonts/Crang (Title).ttf"
+dest_files=["res://.godot/imported/Crang (Title).ttf-309070213bd8ded81a6f4264955cafab.fontdata"]
 
 [params]
 
