@@ -179,7 +179,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_85h08"]
-size = Vector2(19, 45)
+size = Vector2(19, 44)
 
 [node name="Wormo" type="CharacterBody2D" groups=["player"]]
 collision_layer = 2
@@ -200,5 +200,5 @@ position = Vector2(0, -81)
 zoom = Vector2(2, 2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2.5, -27.5)
+position = Vector2(3, -27)
 shape = SubResource("RectangleShape2D_85h08")
