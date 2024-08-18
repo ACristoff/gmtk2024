@@ -72,7 +72,7 @@ script = ExtResource("1_imlk0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 3
-position = Vector2(7, -22)
+position = Vector2(0, -22)
 scale = Vector2(2, 2)
 texture = ExtResource("1_j53td")
 hframes = 4
