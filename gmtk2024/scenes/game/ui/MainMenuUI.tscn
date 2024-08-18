@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4h6t3182l23y"]
+
+[ext_resource type="Texture2D" uid="uid://v1x0hckwdk5d" path="res://scenes/game/ui/il_794xN.4974376048_f3z0.jpg" id="1_midmi"]
+[ext_resource type="Texture2D" uid="uid://c0e1xsjlnvhe3" path="res://assets/Ui/logo.png" id="2_g15ap"]
+[ext_resource type="FontFile" uid="uid://cs8btg58u48y4" path="res://assets/Ui/fonts/Pixellari.ttf" id="4_efpax"]
+
+[node name="Main Menu UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_midmi")
+stretch_mode = 4
+
+[node name="Logo" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_g15ap")
+
+[node name="Start Game" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 1317.0
+offset_top = 661.0
+offset_right = 1747.0
+offset_bottom = 744.0
+theme_override_fonts/normal_font = ExtResource("4_efpax")
+theme_override_font_sizes/normal_font_size = 85
+text = "Start Game"
+
+[node name="Options" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 1456.0
+offset_top = 761.0
+offset_right = 1746.0
+offset_bottom = 844.0
+theme_override_fonts/normal_font = ExtResource("4_efpax")
+theme_override_font_sizes/normal_font_size = 85
+text = "Options"
+
+[node name="Exit" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 1596.0
+offset_top = 861.0
+offset_right = 1750.0
+offset_bottom = 944.0
+theme_override_fonts/normal_font = ExtResource("4_efpax")
+theme_override_font_sizes/normal_font_size = 85
+text = "Exit
+"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 1327.0
+offset_top = 943.0
+offset_right = 1733.0
+offset_bottom = 950.0
