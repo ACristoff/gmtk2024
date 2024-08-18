@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://bqtt4wrgkvngo"]
+[gd_scene load_steps=12 format=4 uid="uid://bqtt4wrgkvngo"]
 
 [ext_resource type="PackedScene" uid="uid://bdlisbe2q6yl2" path="res://scenes/game/characters/rat/rat.tscn" id="1_hcgbd"]
 [ext_resource type="Script" path="res://scenes/_debug/level_base.gd" id="1_huk3f"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://clbj86jw7twd2" path="res://scenes/game/world/deathzone.tscn" id="7_rq7q6"]
 [ext_resource type="PackedScene" uid="uid://57dkghi1trmf" path="res://scenes/game/world/start.tscn" id="9_suolp"]
 [ext_resource type="Texture2D" uid="uid://cstjnjco17dia" path="res://assets/environment/ratface.png" id="10_ql17a"]
+[ext_resource type="PackedScene" uid="uid://djfodgilfk6xg" path="res://scenes/game/characters/flea.tscn" id="11_vnfj4"]
 
 [node name="DebugLevel" type="Node2D"]
 script = ExtResource("1_huk3f")
@@ -75,3 +76,6 @@ texture_filter = 3
 position = Vector2(3600, -29)
 scale = Vector2(3, 3)
 texture = ExtResource("10_ql17a")
+
+[node name="flea" parent="." instance=ExtResource("11_vnfj4")]
+position = Vector2(399, -36)
