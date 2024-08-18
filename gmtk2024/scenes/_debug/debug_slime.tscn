@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://dbuvvlky5ha6"]
+[gd_scene load_steps=6 format=4 uid="uid://dbuvvlky5ha6"]
 
 [ext_resource type="Texture2D" uid="uid://byeocby82gq6u" path="res://assets/environment/slimeground.png" id="1_qw7kc"]
 [ext_resource type="PackedScene" uid="uid://dep41i7inbx8y" path="res://scenes/game/characters/wormo/wormo.tscn" id="2_ymewe"]
+[ext_resource type="Texture2D" uid="uid://bii0s0jwb82ff" path="res://assets/environment/slimefront.png" id="3_hc1wn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8dcbm"]
 texture = ExtResource("1_qw7kc")
@@ -66,3 +67,30 @@ tile_set = SubResource("TileSet_rim3i")
 
 [node name="Wormo" parent="." instance=ExtResource("2_ymewe")]
 position = Vector2(73, -217)
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.8, 0.8)
+scroll_offset = Vector2(-48, 117)
+repeat_size = Vector2(960, 0)
+repeat_times = 3
+
+[node name="Slimefront" type="Sprite2D" parent="Parallax2D"]
+z_index = -4
+texture_filter = 3
+position = Vector2(26, -150)
+scale = Vector2(2, 2)
+texture = ExtResource("3_hc1wn")
+
+[node name="Parallax2D2" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.5, 0.5)
+scroll_offset = Vector2(2741, 1)
+repeat_size = Vector2(960, 0)
+repeat_times = 3
+
+[node name="Slimefront" type="Sprite2D" parent="Parallax2D2"]
+modulate = Color(0.3588, 0.460893, 0.52, 1)
+z_index = -6
+texture_filter = 3
+position = Vector2(857, 68)
+scale = Vector2(-2, 2)
+texture = ExtResource("3_hc1wn")
