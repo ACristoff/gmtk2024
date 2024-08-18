@@ -112,7 +112,7 @@ func update_animations(direction):
 
 func shake():
 	var tween = get_tree().create_tween()
-	var shake = 0.1
+	#var shake = 0.1
 	var random = Vector2(randi_range(0,1), randi_range(0, 1))
 	
 	tween.tween_property(animated_sprite, "offset", random, 0.1)
