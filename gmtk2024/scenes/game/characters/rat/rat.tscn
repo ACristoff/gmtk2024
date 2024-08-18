@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://chpyeaiw684kd" path="res://scenes/game/characters/base_monster_movement.tscn" id="3_8g2yn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6x076"]
-size = Vector2(54, 16)
+size = Vector2(81, 22)
 
 [sub_resource type="Animation" id="Animation_cmxjl"]
 length = 0.001
@@ -25,7 +25,6 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_lr04t"]
 resource_name = "attack"
 length = 0.6
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -53,13 +52,14 @@ script = ExtResource("1_imlk0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 3
-position = Vector2(7, -12)
+position = Vector2(7, -22)
+scale = Vector2(2, 2)
 texture = ExtResource("1_j53td")
 hframes = 4
 vframes = 3
 
 [node name="HurtBox" type="CollisionShape2D" parent="."]
-position = Vector2(10, -8)
+position = Vector2(13.5, -11)
 shape = SubResource("RectangleShape2D_6x076")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -68,9 +68,12 @@ libraries = {
 }
 
 [node name="BiteBox" type="CollisionShape2D" parent="."]
-position = Vector2(48, -19)
+position = Vector2(65, -19)
 shape = SubResource("RectangleShape2D_d2jwd")
 debug_color = Color(0.935362, 0.187431, 0.439923, 0.42)
 
 [node name="BaseMonsterMovement" parent="." node_paths=PackedStringArray("actor") instance=ExtResource("3_8g2yn")]
+speed = 300
 actor = NodePath("..")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
