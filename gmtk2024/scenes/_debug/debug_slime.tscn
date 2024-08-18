@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=4 uid="uid://dbuvvlky5ha6"]
+[gd_scene load_steps=8 format=4 uid="uid://dbuvvlky5ha6"]
 
 [ext_resource type="Texture2D" uid="uid://byeocby82gq6u" path="res://assets/environment/slimeground.png" id="1_qw7kc"]
 [ext_resource type="PackedScene" uid="uid://dep41i7inbx8y" path="res://scenes/game/characters/wormo/wormo.tscn" id="2_ymewe"]
 [ext_resource type="Texture2D" uid="uid://bii0s0jwb82ff" path="res://assets/environment/slimefront.png" id="3_hc1wn"]
+[ext_resource type="Texture2D" uid="uid://bxhdqklnhxmrg" path="res://assets/environment/slimeback.png" id="4_2bcrt"]
+[ext_resource type="Texture2D" uid="uid://p22hoflk5m0u" path="res://assets/environment/slimebottom.png" id="5_ojbcw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8dcbm"]
 texture = ExtResource("1_qw7kc")
@@ -58,6 +60,7 @@ physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_8dcbm")
 
 [node name="debug_slime" type="Node2D"]
+position = Vector2(581, 441)
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
 texture_filter = 3
@@ -66,11 +69,11 @@ tile_map_data = PackedByteArray("AAD//wAAAAAEAAAAAAAAAAAAAAAEAAAAAAABAAAAAAAEAAA
 tile_set = SubResource("TileSet_rim3i")
 
 [node name="Wormo" parent="." instance=ExtResource("2_ymewe")]
-position = Vector2(73, -217)
+position = Vector2(102, -12)
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
-scroll_scale = Vector2(0.8, 0.8)
-scroll_offset = Vector2(-48, 117)
+scroll_scale = Vector2(0.8, 0.2)
+scroll_offset = Vector2(-48, 179)
 repeat_size = Vector2(960, 0)
 repeat_times = 3
 
@@ -82,8 +85,8 @@ scale = Vector2(2, 2)
 texture = ExtResource("3_hc1wn")
 
 [node name="Parallax2D2" type="Parallax2D" parent="."]
-scroll_scale = Vector2(0.5, 0.5)
-scroll_offset = Vector2(2741, 1)
+scroll_scale = Vector2(0.5, 0.1)
+scroll_offset = Vector2(-139, -131)
 repeat_size = Vector2(960, 0)
 repeat_times = 3
 
@@ -94,3 +97,27 @@ texture_filter = 3
 position = Vector2(857, 68)
 scale = Vector2(-2, 2)
 texture = ExtResource("3_hc1wn")
+
+[node name="Parallax2D3" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0, 0)
+scroll_offset = Vector2(452, -111)
+repeat_size = Vector2(960, 0)
+repeat_times = 3
+
+[node name="Slimeback" type="Sprite2D" parent="Parallax2D3"]
+z_index = -10
+position = Vector2(-1, 1)
+scale = Vector2(2, 2.1963)
+texture = ExtResource("4_2bcrt")
+
+[node name="Parallax2D4" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0, 0.2)
+scroll_offset = Vector2(452, -111)
+repeat_size = Vector2(960, 0)
+repeat_times = 3
+
+[node name="Slimebottom" type="Sprite2D" parent="Parallax2D4"]
+z_index = -20
+position = Vector2(757, 928.5)
+scale = Vector2(2, 3.84074)
+texture = ExtResource("5_ojbcw")
