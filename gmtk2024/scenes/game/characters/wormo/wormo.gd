@@ -14,6 +14,11 @@ var active := true
 var is_charging := false
 var is_maxxed = jump_force > max_jump
 var direction = 0
+var is_stage_rat = true
+var is_stage_slime = true
+var is_stage_human = true
+var particle_refresh = true
+
 #saving the previous velocity for wall bouncing, we are now too invested to refactor the movement lmao
 var prev_velocityX = 0
 
@@ -56,6 +61,11 @@ func _physics_process(delta):
 	if velocity.y > 0 && is_on_floor() == false:
 		animated_sprite.flip_v = true
 	else:
+		if is_stage_rat == true:
+			if particle_refresh == true:
+				$ratparticle1.emitting = true
+				$ratparticle2.emitting = true
+				particle_refresh = false
 		animated_sprite.flip_v = false
 	if velocity.y > 500:
 		velocity.y = 500
@@ -85,6 +95,8 @@ func _physics_process(delta):
 		collision_box.shape.size = base_collision_size
 		velocity.x = direction * speed
 	prev_velocityX = velocity.x
+	if is_on_floor() == true:
+		particle_refresh = true
 	move_and_slide()
 	update_animations(direction)
 	pass

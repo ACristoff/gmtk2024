@@ -308,13 +308,13 @@ position = Vector2(2003, -80)
 position = Vector2(2066, -132)
 
 [node name="flea7" parent="fleas" instance=ExtResource("11_vnfj4")]
-position = Vector2(2125, -174)
+position = Vector2(2124, -161)
 
 [node name="flea8" parent="fleas" instance=ExtResource("11_vnfj4")]
 position = Vector2(2444, -334)
 
 [node name="flea3" parent="fleas" instance=ExtResource("11_vnfj4")]
-position = Vector2(913, -143)
+position = Vector2(911, -132)
 
 [connection signal="body_entered" from="Exit" to="." method="_on_exit_body_entered"]
 
