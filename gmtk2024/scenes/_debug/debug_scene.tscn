@@ -10,12 +10,13 @@
 [ext_resource type="PackedScene" uid="uid://clbj86jw7twd2" path="res://scenes/game/world/deathzone.tscn" id="7_rq7q6"]
 [ext_resource type="PackedScene" uid="uid://57dkghi1trmf" path="res://scenes/game/world/start.tscn" id="9_suolp"]
 [ext_resource type="Texture2D" uid="uid://cstjnjco17dia" path="res://assets/environment/ratface.png" id="10_ql17a"]
-[ext_resource type="PackedScene" uid="uid://djfodgilfk6xg" path="res://scenes/game/characters/flea.tscn" id="11_vnfj4"]
+[ext_resource type="PackedScene" uid="uid://dow147f38aiwi" path="res://scenes/game/characters/flea.tscn" id="11_vnfj4"]
 
 [node name="DebugLevel" type="Node2D"]
 script = ExtResource("1_huk3f")
 
 [node name="Rat" parent="." instance=ExtResource("1_hcgbd")]
+visible = false
 position = Vector2(-92, -47)
 
 [node name="Wormo" parent="." instance=ExtResource("2_dhfww")]

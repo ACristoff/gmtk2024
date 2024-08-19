@@ -1,8 +1,23 @@
-[gd_scene load_steps=12 format=3 uid="uid://djfodgilfk6xg"]
+[gd_scene load_steps=12 format=3 uid="uid://dow147f38aiwi"]
 
 [ext_resource type="Script" path="res://scenes/game/characters/flea_spawn.gd" id="1_4myx0"]
 [ext_resource type="Texture2D" uid="uid://cbx67g3qsfskm" path="res://assets/characters/flea.png" id="1_t8o4a"]
 [ext_resource type="Texture2D" uid="uid://pg7erwjeyi34" path="res://assets/characters/fleaspawn.png" id="3_ddjeu"]
+
+[sub_resource type="Animation" id="Animation_p81yr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Flea:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="Animation" id="Animation_4wt7h"]
 resource_name = "fela"
@@ -21,21 +36,6 @@ tracks/0/keys = {
 "values": [0, 1]
 }
 
-[sub_resource type="Animation" id="Animation_p81yr"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Flea:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_chou6"]
 _data = {
 "RESET": SubResource("Animation_p81yr"),
@@ -44,6 +44,21 @@ _data = {
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xcdpo"]
 size = Vector2(16, 16)
+
+[sub_resource type="Animation" id="Animation_s3get"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fleaspawn:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="Animation" id="Animation_uprut"]
 resource_name = "spawn"
@@ -75,21 +90,6 @@ tracks/1/keys = {
 }]
 }
 
-[sub_resource type="Animation" id="Animation_s3get"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Fleaspawn:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nvdxm"]
 _data = {
 "RESET": SubResource("Animation_s3get"),
@@ -119,6 +119,7 @@ libraries = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_xcdpo")
+debug_color = Color(0.971675, 0.0512374, 0.409893, 0.42)
 
 [node name="Fleaspawn" type="Sprite2D" parent="."]
 texture_filter = 3

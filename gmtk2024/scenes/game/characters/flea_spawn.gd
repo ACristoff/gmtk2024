@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 var jumped = false
 @export var gravity := 500
+@export var lunge_strength := 400
 
 
 func lunge():
@@ -9,13 +10,15 @@ func lunge():
 	jumped = true
 	$Flea.visible = true
 	$Fleaspawn.visible = false
-	velocity.y -100
+	velocity.y = -lunge_strength
 	print("flea: RAH!")
 
 func _physics_process(delta):
 	if jumped == true:
-		print("flea is succumbing to gravity")
+		#print("flea is succumbing to gravity")
 		velocity.y += gravity * delta
+		pass
+	move_and_slide()
 
 func _on_area_2d_body_entered(body):
 	if body.has_method("shake"):
