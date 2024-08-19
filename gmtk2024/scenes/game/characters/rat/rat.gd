@@ -24,7 +24,6 @@ func _input(_event):
 		_animation_player.play("attack")
 	pass
 
-
 func bite():
 	#print("Killing bites!")
 	override_x = true
