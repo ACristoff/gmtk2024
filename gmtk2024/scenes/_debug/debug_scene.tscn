@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=4 uid="uid://bqtt4wrgkvngo"]
+[gd_scene load_steps=13 format=4 uid="uid://bqtt4wrgkvngo"]
 
+[ext_resource type="PackedScene" uid="uid://bdlisbe2q6yl2" path="res://scenes/game/characters/rat/rat.tscn" id="1_hcgbd"]
 [ext_resource type="Script" path="res://scenes/_debug/level_base.gd" id="1_huk3f"]
 [ext_resource type="PackedScene" uid="uid://c0stt80wn3u3f" path="res://scenes/game/world/tile_map.tscn" id="1_xi1eb"]
 [ext_resource type="PackedScene" uid="uid://dep41i7inbx8y" path="res://scenes/game/characters/wormo/wormo.tscn" id="2_dhfww"]
@@ -82,3 +83,6 @@ position = Vector2(-341, 13)
 
 [node name="Exit" parent="." instance=ExtResource("12_nwsmw")]
 position = Vector2(3268, -77)
+
+[node name="Rat" parent="." instance=ExtResource("1_hcgbd")]
+position = Vector2(5, -121)

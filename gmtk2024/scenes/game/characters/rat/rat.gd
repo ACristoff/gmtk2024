@@ -8,8 +8,8 @@ extends CharacterBody2D
 var bite_box_init_position = 0
 var hurt_box_init_position = 0
 
-@export var lungeX = 200
-@export var lungeY = 100
+@export var lungeX = 300
+@export var lungeY = 120
 
 var direction = 0
 var override_x = false
