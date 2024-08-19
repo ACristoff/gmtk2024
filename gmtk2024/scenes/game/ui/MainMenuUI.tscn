@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://b4h6t3182l23y"]
+[gd_scene load_steps=8 format=3 uid="uid://b4h6t3182l23y"]
 
+[ext_resource type="AudioStream" uid="uid://cdpkwf1j2eiqd" path="res://assets/sounds/Wormo Main Theme Rough.mp3" id="1_k8kc5"]
 [ext_resource type="Texture2D" uid="uid://v1x0hckwdk5d" path="res://scenes/game/ui/il_794xN.4974376048_f3z0.jpg" id="1_midmi"]
 [ext_resource type="Texture2D" uid="uid://c0e1xsjlnvhe3" path="res://assets/Ui/logo.png" id="2_g15ap"]
 [ext_resource type="FontFile" uid="uid://cs8btg58u48y4" path="res://assets/Ui/fonts/Pixellari.ttf" id="4_efpax"]
@@ -15,6 +16,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_k8kc5")
+autoplay = true
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
