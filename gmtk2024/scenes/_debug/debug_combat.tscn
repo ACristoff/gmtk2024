@@ -71,8 +71,8 @@ tile_set = SubResource("TileSet_y54n5")
 [node name="Start" parent="." instance=ExtResource("2_isy11")]
 position = Vector2(990, 673)
 
-[node name="Slime" parent="." instance=ExtResource("4_6oa1b")]
-position = Vector2(1315, 753)
-
 [node name="Rat" parent="." instance=ExtResource("3_vjl3h")]
 position = Vector2(990, 673)
+
+[node name="SlimeBoss" parent="." instance=ExtResource("4_6oa1b")]
+position = Vector2(1540, 800)
