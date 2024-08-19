@@ -59,3 +59,8 @@ func _physics_process(_delta):
 func _on_animation_player_animation_finished(anim_name):
 	#print(anim_name)
 	pass # Replace with function body.
+
+
+func _on_bite_box_body_entered(body):
+	print(body)
+	pass # Replace with function body.
