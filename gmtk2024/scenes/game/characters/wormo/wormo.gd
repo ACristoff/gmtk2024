@@ -18,6 +18,8 @@ var direction = 0
 var prev_velocityX = 0
 
 @onready var animated_sprite = $AnimatedSprite2D
+@onready var collision_box = $CollisionShape2D
+var base_collision_size = null
 @onready var grunts_sfx = [
 	preload("res://assets/sounds/Wormo Grunt 1.wav"), 
 	preload("res://assets/sounds/Wormo Grunt 2.wav"), 
@@ -29,8 +31,17 @@ var prev_velocityX = 0
 ]
 ##TODO SFX 
 
+#var new_shape = CircleShape2D.new()
+#new_shape.radius = 100 #The size that you want
+#$CollisionShape.shape = new_shape
+
+func _ready():
+	base_collision_size = collision_box.shape.size
+	print(base_collision_size)
 
 func jump_release(force):
+	collision_box.shape.size = Vector2(15, 40)
+	
 	velocity.y = -force
 	if animated_sprite.flip_h == false:
 		velocity.x = force * jump_x_damp
@@ -50,6 +61,7 @@ func _physics_process(delta):
 	if velocity.y > 0 && is_on_floor() == false:
 		animated_sprite.flip_v = true
 	else:
+		collision_box.shape.size = base_collision_size
 		animated_sprite.flip_v = false
 	if velocity.y > 500:
 		velocity.y = 500
