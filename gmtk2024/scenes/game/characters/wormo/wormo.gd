@@ -50,8 +50,10 @@ func jump_release(force):
 		pass
 
 func _physics_process(delta):
+	apply_wall_impulse()
 	if is_on_wall() == true && velocity.y < 0:
-		velocity.x = prev_velocityX * -1
+		velocity.x = prev_velocityX * -1.2  # Increase bounce force
+		velocity.y *= 0.8  # Reduce vertical velocity slightly
 	velocity.y += gravity * delta
 	if velocity.y > 0 && is_on_floor() == false:
 		animated_sprite.flip_v = true
@@ -114,3 +116,9 @@ func shake():
 	var random = Vector2(randi_range(0,1), randi_range(0, 1))
 	tween.tween_property(animated_sprite, "offset", random, 0.1)
 	pass
+	
+
+func apply_wall_impulse():
+	if is_on_wall():
+		var wall_normal = get_wall_normal()
+		velocity += wall_normal * 150  # 150 is impulse strength
