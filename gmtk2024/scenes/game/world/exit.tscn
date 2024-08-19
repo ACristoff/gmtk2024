@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://lq1qyt1nydoo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_827tw"]
-size = Vector2(175.75, 133.75)
+size = Vector2(281.875, 201.875)
 
 [node name="Exit" type="Area2D"]
 collision_layer = 16
