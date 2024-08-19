@@ -14,7 +14,6 @@ func _input(_event):
 	pass
 
 func _physics_process(delta):
-	#print(actor.velocity)
 	if actor.is_on_floor() == false:
 		actor.velocity.y += gravity * delta
 	direction = Input.get_axis("move_left", "move_right")
@@ -24,11 +23,7 @@ func _physics_process(delta):
 	if actor.is_on_floor() == true && actor.override_x == false:
 		actor.velocity.x = direction * speed
 	actor.move_and_slide()
-	#update_animations(direction)
 	pass
-
-#if is_on_floor() == true && Input.is_action_just_released("jump") == false && Input.is_action_pressed("jump") == false:
-		#velocity.x = direction * speed
 
 func update_animations(_direction):
 	pass
