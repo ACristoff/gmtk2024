@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=4 uid="uid://bfidrrx06i5gh"]
+[gd_scene load_steps=7 format=4 uid="uid://bfidrrx06i5gh"]
 
 [ext_resource type="Texture2D" uid="uid://byeocby82gq6u" path="res://assets/environment/slimeground.png" id="1_ce8m8"]
 [ext_resource type="PackedScene" uid="uid://57dkghi1trmf" path="res://scenes/game/world/start.tscn" id="2_isy11"]
 [ext_resource type="PackedScene" uid="uid://bdlisbe2q6yl2" path="res://scenes/game/characters/rat/rat.tscn" id="3_vjl3h"]
+[ext_resource type="PackedScene" uid="uid://bfn22b5yol6ty" path="res://scenes/game/characters/slime/slime_boss.tscn" id="4_6oa1b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ikic6"]
 texture = ExtResource("1_ce8m8")
@@ -70,4 +71,8 @@ tile_set = SubResource("TileSet_y54n5")
 [node name="Start" parent="." instance=ExtResource("2_isy11")]
 position = Vector2(990, 673)
 
-[node name="Rat" parent="Start" instance=ExtResource("3_vjl3h")]
+[node name="Slime" parent="." instance=ExtResource("4_6oa1b")]
+position = Vector2(1315, 753)
+
+[node name="Rat" parent="." instance=ExtResource("3_vjl3h")]
+position = Vector2(990, 673)

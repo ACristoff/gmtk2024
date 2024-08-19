@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bfn22b5yol6ty"]
 
 [ext_resource type="Texture2D" uid="uid://d0eeu3e2w0s2a" path="res://assets/characters/slime/slimesheet.png" id="1_wohwt"]
-[ext_resource type="PackedScene" uid="uid://chpyeaiw684kd" path="res://scenes/game/characters/base_monster_movement.tscn" id="2_8romc"]
+[ext_resource type="Script" path="res://scenes/game/characters/slime/slime_boss.gd" id="1_wwnav"]
 
 [sub_resource type="Animation" id="Animation_ad7hx"]
 resource_name = "slime_attack"
@@ -41,18 +41,19 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6x076"]
-size = Vector2(81, 22)
+size = Vector2(52, 29)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tbsy5"]
 size = Vector2(65.625, 74.5)
 
-[node name="Slime" type="CharacterBody2D"]
-collision_layer = 10
+[node name="SlimeBoss" type="CharacterBody2D"]
+collision_layer = 8
 collision_mask = 3
+script = ExtResource("1_wwnav")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 3
-position = Vector2(0, -22)
+position = Vector2(0, -63)
 scale = Vector2(2, 2)
 texture = ExtResource("1_wohwt")
 hframes = 14
@@ -64,24 +65,15 @@ libraries = {
 }
 
 [node name="HurtBox" type="CollisionShape2D" parent="."]
-position = Vector2(13.5, -11)
+position = Vector2(6, -24.5)
 shape = SubResource("RectangleShape2D_6x076")
 
-[node name="BaseMonsterMovement" parent="." node_paths=PackedStringArray("actor") instance=ExtResource("2_8romc")]
-speed = 300
-actor = NodePath("..")
-
-[node name="BiteBox" type="Area2D" parent="."]
+[node name="SplashBox" type="Area2D" parent="."]
 position = Vector2(87.75, -44)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BiteBox"]
-position = Vector2(-0.75, 7)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SplashBox"]
+position = Vector2(-80.75, 6)
 shape = SubResource("RectangleShape2D_tbsy5")
 debug_color = Color(0.897404, 0.272787, 0.415876, 0.42)
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, -81)
-zoom = Vector2(2, 2)
-position_smoothing_enabled = true
-
-[connection signal="body_entered" from="BiteBox" to="." method="_on_bite_box_body_entered"]
+[connection signal="body_entered" from="SplashBox" to="." method="_on_bite_box_body_entered"]
