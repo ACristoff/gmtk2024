@@ -1,9 +1,9 @@
 extends AudioStreamPlayer
-
-const levelMusic = [
-	preload("res://assets/sounds/Wormo Main Theme Rough.mp3"),
-	
-]
+#
+#const levelMusic = [
+	##preload("res://assets/sounds/Wormo Main Theme Rough.mp3"),
+	##preload("res://a")
+#]
 
 func play_sfx(new_stream: AudioStream, volume = 0.0):
 	var fx_player = AudioStreamPlayer.new()
@@ -16,8 +16,8 @@ func play_sfx(new_stream: AudioStream, volume = 0.0):
 	await fx_player.finished
 	fx_player.queue_free()
 
-func play_music_level():
-	_play_music(levelMusic[0], -12)
+func play_music_level(levelMusic):
+	_play_music(levelMusic, 0)
 
 func _play_music(music: AudioStream, volume = 0.0):
 	if stream == music:

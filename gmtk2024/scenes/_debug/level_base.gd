@@ -3,6 +3,7 @@ extends Node2D
 @export var next_level: PackedScene = null
 @export var level_time = 60
 @export var is_final_level: bool = false
+@export var level_theme: AudioStreamMP3 = null
 var player = null
 var timer_node = null
 var time_left = null
@@ -23,6 +24,8 @@ func _ready():
 		monster.touched_player.connect(on_monster_touched_player)
 	death_zone.body_entered.connect(_on_deathzone_body_entered)
 	exit.body_entered.connect(_on_exit_body_entered)
+	if level_theme != null:
+		GlobalTheme.play_music_level(level_theme)
 
 func _on_deathzone_body_entered(_body):
 	#print("oopsy woopsy!")

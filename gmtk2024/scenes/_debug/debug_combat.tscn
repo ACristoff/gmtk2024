@@ -76,3 +76,5 @@ position = Vector2(990, 673)
 
 [node name="SlimeBoss" parent="." instance=ExtResource("4_6oa1b")]
 position = Vector2(1540, 800)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
