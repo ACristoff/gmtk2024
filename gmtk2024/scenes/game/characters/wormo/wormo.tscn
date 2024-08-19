@@ -184,6 +184,8 @@ size = Vector2(19, 44)
 [node name="Wormo" type="CharacterBody2D" groups=["player"]]
 collision_layer = 2
 collision_mask = 13
+floor_stop_on_slope = false
+floor_max_angle = 0.0174533
 script = ExtResource("1_q6aup")
 jump_x_damp = 0.5
 

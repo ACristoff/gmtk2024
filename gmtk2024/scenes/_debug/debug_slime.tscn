@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://dbuvvlky5ha6"]
+[gd_scene load_steps=8 format=4 uid="uid://bb05mfdiart5b"]
 
 [ext_resource type="Texture2D" uid="uid://byeocby82gq6u" path="res://assets/environment/slimeground.png" id="1_qw7kc"]
 [ext_resource type="PackedScene" uid="uid://dep41i7inbx8y" path="res://scenes/game/characters/wormo/wormo.tscn" id="2_ymewe"]

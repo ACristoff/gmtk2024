@@ -46,9 +46,8 @@ func jump_release(force):
 func _physics_process(delta):
 	if is_on_wall() == true && velocity.y < 0:
 		velocity.x = prev_velocityX * -1
-	if is_on_floor() == false:
-		velocity.y += gravity * delta
-	if velocity.y > 0:
+	velocity.y += gravity * delta
+	if velocity.y > 0 && is_on_floor() == false:
 		animated_sprite.flip_v = true
 	else:
 		animated_sprite.flip_v = false
