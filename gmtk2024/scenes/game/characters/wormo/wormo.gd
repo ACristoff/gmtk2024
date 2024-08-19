@@ -31,10 +31,6 @@ var base_collision_size = null
 ]
 ##TODO SFX 
 
-#var new_shape = CircleShape2D.new()
-#new_shape.radius = 100 #The size that you want
-#$CollisionShape.shape = new_shape
-
 func _ready():
 	base_collision_size = collision_box.shape.size
 	print(base_collision_size)
@@ -55,6 +51,7 @@ func jump_release(force):
 		pass
 
 func _physics_process(delta):
+	#print(get_floor_normal())
 	if is_on_wall() == true && velocity.y < 0:
 		velocity.x = prev_velocityX * -1
 	velocity.y += gravity * delta
