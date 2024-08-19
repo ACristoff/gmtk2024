@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://lq1qyt1nydoo" path="res://scenes/game/world/exit.tscn" id="8_6hr58"]
 [ext_resource type="PackedScene" uid="uid://clbj86jw7twd2" path="res://scenes/game/world/deathzone.tscn" id="9_ar3wb"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bvxv0"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kj5re"]
 texture = ExtResource("1_qw7kc")
 0:0/0 = 0
 1:0/0 = 0
@@ -46,11 +46,9 @@ texture = ExtResource("1_qw7kc")
 3:3/0 = 0
 3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:3/0 = 0
-4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 8, 8, -8, 8, 8, -8, 8)
-4:3/0/physics_layer_0/polygon_1/points = PackedVector2Array(8, 8, -8, 8, 8, -8)
+4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, -8, 8, 8, -8, 8)
 5:3/0 = 0
-5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 8, -8, -8, 8, 8, -8, 8)
-5:3/0/physics_layer_0/polygon_1/points = PackedVector2Array(8, 8, -8, 8, -8, -8)
+5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, 8, 8, 8, -8, 8)
 0:4/0 = 0
 1:4/0 = 0
 2:4/0 = 0
@@ -61,7 +59,7 @@ texture = ExtResource("1_qw7kc")
 [sub_resource type="TileSet" id="TileSet_rim3i"]
 physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 2
-sources/0 = SubResource("TileSetAtlasSource_bvxv0")
+sources/0 = SubResource("TileSetAtlasSource_kj5re")
 
 [node name="debug_slime" type="Node2D"]
 position = Vector2(581, 441)
