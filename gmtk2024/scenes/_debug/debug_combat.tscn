@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://bfidrrx06i5gh"]
+[gd_scene load_steps=8 format=4 uid="uid://bfidrrx06i5gh"]
 
 [ext_resource type="Texture2D" uid="uid://byeocby82gq6u" path="res://assets/environment/slimeground.png" id="1_ce8m8"]
 [ext_resource type="PackedScene" uid="uid://57dkghi1trmf" path="res://scenes/game/world/start.tscn" id="2_isy11"]
 [ext_resource type="PackedScene" uid="uid://bdlisbe2q6yl2" path="res://scenes/game/characters/rat/rat.tscn" id="3_vjl3h"]
 [ext_resource type="PackedScene" uid="uid://bfn22b5yol6ty" path="res://scenes/game/characters/slime/slime_boss.tscn" id="4_6oa1b"]
+[ext_resource type="Texture2D" uid="uid://b6btthy6m7uqd" path="res://assets/environment/combatsewer.png" id="5_4wve1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ikic6"]
 texture = ExtResource("1_ce8m8")
@@ -62,6 +63,7 @@ sources/0 = SubResource("TileSetAtlasSource_ikic6")
 position = Vector2(0, -1)
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
+visible = false
 texture_filter = 3
 position = Vector2(765, 813)
 scale = Vector2(2, 2)
@@ -74,7 +76,21 @@ position = Vector2(990, 673)
 [node name="Rat" parent="." instance=ExtResource("3_vjl3h")]
 position = Vector2(990, 673)
 
+[node name="Camera2D" parent="Rat" index="5"]
+limit_left = 375
+limit_right = 1690
+limit_bottom = 9999645
+
 [node name="SlimeBoss" parent="." instance=ExtResource("4_6oa1b")]
 position = Vector2(1540, 800)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Combatsewer" type="Sprite2D" parent="."]
+z_index = -10
+texture_filter = 3
+position = Vector2(1032, 605)
+scale = Vector2(3, 3)
+texture = ExtResource("5_4wve1")
+
+[editable path="Rat"]

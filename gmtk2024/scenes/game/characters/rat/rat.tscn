@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bdlisbe2q6yl2"]
+[gd_scene load_steps=11 format=3 uid="uid://bdlisbe2q6yl2"]
 
 [ext_resource type="Script" path="res://scenes/game/characters/rat/rat.gd" id="1_imlk0"]
 [ext_resource type="Texture2D" uid="uid://csf2odtjma7o6" path="res://assets/characters/rat/rat.png" id="1_j53td"]
@@ -8,7 +8,9 @@
 size = Vector2(88, 23.5)
 
 [sub_resource type="Animation" id="Animation_cmxjl"]
-length = 0.001
+length = 0.6
+loop_mode = 1
+step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -16,10 +18,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [0]
+"values": [0, 4, 8, 5]
 }
 
 [sub_resource type="Animation" id="Animation_lr04t"]
@@ -56,10 +58,48 @@ tracks/1/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_ckmth"]
+resource_name = "move"
+length = 0.3
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 4, 8]
+}
+
+[sub_resource type="Animation" id="Animation_gx8ba"]
+resource_name = "idle"
+length = 0.2
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [5, 1]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_sochv"]
 _data = {
 "RESET": SubResource("Animation_cmxjl"),
-"attack": SubResource("Animation_lr04t")
+"attack": SubResource("Animation_lr04t"),
+"idle": SubResource("Animation_gx8ba"),
+"move": SubResource("Animation_ckmth")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tbsy5"]
