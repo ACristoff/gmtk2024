@@ -86,7 +86,7 @@ text = "Options"
 [node name="AnimationComponent" type="Node" parent="Options"]
 script = ExtResource("4_nicsl")
 
-[node name="Exit2" type="Button" parent="."]
+[node name="Exit" type="Button" parent="."]
 layout_mode = 0
 offset_left = 1451.0
 offset_top = 856.0
@@ -108,5 +108,5 @@ theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_elxg8")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_elxg8")
 text = "Exit"
 
-[node name="AnimationComponentExit" type="Node" parent="Exit2"]
+[node name="AnimationComponentExit" type="Node" parent="Exit"]
 script = ExtResource("5_gdhd6")

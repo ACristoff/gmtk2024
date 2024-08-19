@@ -2,7 +2,7 @@ class_name AnimationComponentExit extends Node
 
 @export var hover_color: Color = Color(1, 0.3, 0.3)  # Reddish color
 @export var transition_duration: float = 0.5
-@export var flicker_speed: float = 0.05
+@export var flicker_speed: float = 0.5
 @export var flicker_intensity: float = 0.3
 
 var original_modulate: Color
