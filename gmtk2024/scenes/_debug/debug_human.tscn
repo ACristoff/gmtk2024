@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=4 uid="uid://crqkedv8nt43b"]
+[gd_scene load_steps=9 format=4 uid="uid://crqkedv8nt43b"]
 
 [ext_resource type="Texture2D" uid="uid://byeocby82gq6u" path="res://assets/environment/slimeground.png" id="1_nvfht"]
 [ext_resource type="Texture2D" uid="uid://dcje6o1y6xrev" path="res://assets/environment/humanground.png" id="2_fh4us"]
 [ext_resource type="PackedScene" uid="uid://dep41i7inbx8y" path="res://scenes/game/characters/wormo/wormo.tscn" id="3_i6rc2"]
+[ext_resource type="Texture2D" uid="uid://becsjnphfebm2" path="res://assets/environment/humanback.png" id="4_sic2n"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qs2cy"]
 texture = ExtResource("1_nvfht")
@@ -213,3 +214,14 @@ tile_set = SubResource("TileSet_e7mej")
 
 [node name="Wormo" parent="." instance=ExtResource("3_i6rc2")]
 position = Vector2(-205, -1197)
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+z_index = -10
+scroll_offset = Vector2(3772, 0)
+repeat_size = Vector2(480, 0)
+repeat_times = 5
+
+[node name="Humanback" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(479, -905)
+scale = Vector2(1, 9.45556)
+texture = ExtResource("4_sic2n")
