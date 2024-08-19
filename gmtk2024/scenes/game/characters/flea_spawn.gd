@@ -3,7 +3,7 @@ extends CharacterBody2D
 var jumped = false
 @export var gravity := 500
 @export var lunge_strength := 400
-signal touched_player
+signal touched_player(monster)
 
 func lunge():
 	$AnimationPlayer.play("fela")
@@ -31,4 +31,4 @@ func _on_area_2d_body_entered(body):
 
 func _on_hurt_box_body_entered(body):
 	if body is Player:
-		touched_player.emit()
+		touched_player.emit("flea")

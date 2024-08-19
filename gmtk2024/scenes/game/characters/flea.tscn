@@ -102,7 +102,7 @@ radius = 292.246
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0ay3y"]
 size = Vector2(22, 23)
 
-[node name="flea" type="CharacterBody2D"]
+[node name="flea" type="CharacterBody2D" groups=["monster"]]
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_4myx0")
@@ -138,12 +138,15 @@ libraries = {
 speed_scale = 0.056
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 32
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_5tn8m")
 
 [node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 position = Vector2(0, -1.5)

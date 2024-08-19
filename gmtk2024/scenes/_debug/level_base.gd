@@ -14,11 +14,13 @@ var winCon = false
 
 @onready var hud = null
 
-
 func _ready():
 	player = get_tree().get_first_node_in_group("player")
 	if player != null:
 		player.global_position = start.get_spawn_pos()
+	var monsters = get_tree().get_nodes_in_group("monster")
+	for monster in monsters:
+		monster.touched_player.connect(on_monster_touched_player)
 	death_zone.body_entered.connect(_on_deathzone_body_entered)
 	exit.body_entered.connect(_on_exit_body_entered)
 
@@ -35,4 +37,8 @@ func _on_exit_body_entered(body):
 	prints("exit reached", body)
 	winCon = true
 	#Load next level here
+	pass
+
+func on_monster_touched_player(monster):
+	#print("touched by flea", monster)
 	pass
