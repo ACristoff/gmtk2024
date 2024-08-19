@@ -33,7 +33,6 @@ var base_collision_size = null
 
 func _ready():
 	base_collision_size = collision_box.shape.size
-	print(base_collision_size)
 
 func jump_release(force):
 	collision_box.shape.size = Vector2(15, 40)
@@ -51,7 +50,6 @@ func jump_release(force):
 		pass
 
 func _physics_process(delta):
-	#print(get_floor_normal())
 	if is_on_wall() == true && velocity.y < 0:
 		velocity.x = prev_velocityX * -1
 	velocity.y += gravity * delta
@@ -73,7 +71,6 @@ func _physics_process(delta):
 			is_charging = true
 			if is_charging == true && jump_force == 100 + (jump_acceleration * 24):
 				var random = randi_range(1,grunts_sfx.size()) - 1
-				#print(random)
 				GlobalTheme.play_sfx(grunts_sfx[random], 0.0)
 			if jump_force < max_jump:
 				jump_force += jump_acceleration
