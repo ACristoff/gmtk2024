@@ -200,6 +200,7 @@ autoplay = "idle"
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -81)
 zoom = Vector2(2, 2)
+position_smoothing_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(3, -27)

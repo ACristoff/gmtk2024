@@ -26,7 +26,7 @@ func _input(_event):
 
 
 func bite():
-	print("Killing bites!")
+	#print("Killing bites!")
 	override_x = true
 	bite_box.disabled = false
 	velocity.y = -lungeY
@@ -57,7 +57,6 @@ func _physics_process(_delta):
 	pass
 
 func _on_animation_player_animation_finished(anim_name):
-	#print(anim_name)
 	pass # Replace with function body.
 
 
