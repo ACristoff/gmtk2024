@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://bqtt4wrgkvngo"]
+[gd_scene load_steps=13 format=4 uid="uid://bqtt4wrgkvngo"]
 
 [ext_resource type="PackedScene" uid="uid://bdlisbe2q6yl2" path="res://scenes/game/characters/rat/rat.tscn" id="1_hcgbd"]
 [ext_resource type="Script" path="res://scenes/_debug/level_base.gd" id="1_huk3f"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://57dkghi1trmf" path="res://scenes/game/world/start.tscn" id="9_suolp"]
 [ext_resource type="Texture2D" uid="uid://cstjnjco17dia" path="res://assets/environment/ratface.png" id="10_ql17a"]
 [ext_resource type="PackedScene" uid="uid://dow147f38aiwi" path="res://scenes/game/characters/flea.tscn" id="11_vnfj4"]
+[ext_resource type="PackedScene" uid="uid://lq1qyt1nydoo" path="res://scenes/game/world/exit.tscn" id="12_nwsmw"]
 
 [node name="DebugLevel" type="Node2D"]
 script = ExtResource("1_huk3f")
@@ -80,3 +81,9 @@ texture = ExtResource("10_ql17a")
 
 [node name="flea" parent="." instance=ExtResource("11_vnfj4")]
 position = Vector2(399, -36)
+
+[node name="flea2" parent="." instance=ExtResource("11_vnfj4")]
+position = Vector2(1381, -17)
+
+[node name="Exit" parent="." instance=ExtResource("12_nwsmw")]
+position = Vector2(-144, -109)
