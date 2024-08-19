@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://b4h6t3182l23y"]
+[gd_scene load_steps=7 format=3 uid="uid://b4h6t3182l23y"]
 
 [ext_resource type="Texture2D" uid="uid://v1x0hckwdk5d" path="res://scenes/game/ui/il_794xN.4974376048_f3z0.jpg" id="1_midmi"]
 [ext_resource type="Texture2D" uid="uid://c0e1xsjlnvhe3" path="res://assets/Ui/logo.png" id="2_g15ap"]
 [ext_resource type="FontFile" uid="uid://cs8btg58u48y4" path="res://assets/Ui/fonts/Pixellari.ttf" id="4_efpax"]
 [ext_resource type="Script" path="res://scenes/game/ui/animation_component.gd" id="4_nicsl"]
+[ext_resource type="Script" path="res://scenes/game/ui/animation_component_exit.gd" id="5_gdhd6"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_elxg8"]
 
@@ -28,35 +29,14 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("2_g15ap")
 
-[node name="Options" type="RichTextLabel" parent="."]
-layout_mode = 0
-offset_left = 1456.0
-offset_top = 761.0
-offset_right = 1746.0
-offset_bottom = 844.0
-theme_override_fonts/normal_font = ExtResource("4_efpax")
-theme_override_font_sizes/normal_font_size = 85
-text = "Options"
-
-[node name="Exit" type="RichTextLabel" parent="."]
-layout_mode = 0
-offset_left = 1596.0
-offset_top = 861.0
-offset_right = 1750.0
-offset_bottom = 944.0
-theme_override_fonts/normal_font = ExtResource("4_efpax")
-theme_override_font_sizes/normal_font_size = 85
-text = "Exit
-"
-
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
 offset_left = 1327.0
-offset_top = 943.0
+offset_top = 967.0
 offset_right = 1733.0
-offset_bottom = 950.0
+offset_bottom = 974.0
 
-[node name="Button" type="Button" parent="."]
+[node name="Start Game" type="Button" parent="."]
 layout_mode = 0
 offset_left = 1313.0
 offset_top = 658.0
@@ -78,5 +58,55 @@ theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_elxg8")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_elxg8")
 text = "Start Game"
 
-[node name="AnimationComponent" type="Node" parent="Button"]
+[node name="AnimationComponent" type="Node" parent="Start Game"]
 script = ExtResource("4_nicsl")
+
+[node name="Options" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1384.0
+offset_top = 756.0
+offset_right = 1812.0
+offset_bottom = 850.0
+theme_override_colors/font_hover_color = Color(0.950555, 0, 0.307878, 1)
+theme_override_fonts/font = ExtResource("4_efpax")
+theme_override_font_sizes/font_size = 85
+theme_override_styles/focus = SubResource("StyleBoxEmpty_elxg8")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_elxg8")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_elxg8")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_elxg8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_elxg8")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_elxg8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_elxg8")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_elxg8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_elxg8")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_elxg8")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_elxg8")
+text = "Options"
+
+[node name="AnimationComponent" type="Node" parent="Options"]
+script = ExtResource("4_nicsl")
+
+[node name="Exit2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1451.0
+offset_top = 856.0
+offset_right = 1879.0
+offset_bottom = 950.0
+theme_override_colors/font_hover_color = Color(0.950555, 0, 0.307878, 1)
+theme_override_fonts/font = ExtResource("4_efpax")
+theme_override_font_sizes/font_size = 85
+theme_override_styles/focus = SubResource("StyleBoxEmpty_elxg8")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_elxg8")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_elxg8")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_elxg8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_elxg8")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_elxg8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_elxg8")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_elxg8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_elxg8")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_elxg8")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_elxg8")
+text = "Exit"
+
+[node name="AnimationComponentExit" type="Node" parent="Exit2"]
+script = ExtResource("5_gdhd6")
