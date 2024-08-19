@@ -1,9 +1,13 @@
-[gd_scene load_steps=9 format=4 uid="uid://crqkedv8nt43b"]
+[gd_scene load_steps=13 format=4 uid="uid://ousmjixqox4h"]
 
 [ext_resource type="Texture2D" uid="uid://byeocby82gq6u" path="res://assets/environment/slimeground.png" id="1_nvfht"]
+[ext_resource type="Script" path="res://scenes/_debug/level_base.gd" id="1_pjkfs"]
 [ext_resource type="Texture2D" uid="uid://dcje6o1y6xrev" path="res://assets/environment/humanground.png" id="2_fh4us"]
 [ext_resource type="PackedScene" uid="uid://dep41i7inbx8y" path="res://scenes/game/characters/wormo/wormo.tscn" id="3_i6rc2"]
 [ext_resource type="Texture2D" uid="uid://becsjnphfebm2" path="res://assets/environment/humanback.png" id="4_sic2n"]
+[ext_resource type="PackedScene" uid="uid://clbj86jw7twd2" path="res://scenes/game/world/deathzone.tscn" id="6_pfy8s"]
+[ext_resource type="PackedScene" uid="uid://57dkghi1trmf" path="res://scenes/game/world/start.tscn" id="7_ui13t"]
+[ext_resource type="PackedScene" uid="uid://lq1qyt1nydoo" path="res://scenes/game/world/exit.tscn" id="8_1bv6f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qs2cy"]
 texture = ExtResource("1_nvfht")
@@ -205,6 +209,7 @@ sources/1 = SubResource("TileSetAtlasSource_2j40o")
 sources/2 = SubResource("TileSetAtlasSource_tobyl")
 
 [node name="debug_human" type="Node2D"]
+script = ExtResource("1_pjkfs")
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
 texture_filter = 3
@@ -225,3 +230,12 @@ repeat_times = 5
 position = Vector2(479, -905)
 scale = Vector2(1, 9.45556)
 texture = ExtResource("4_sic2n")
+
+[node name="Deathzone" parent="." instance=ExtResource("6_pfy8s")]
+position = Vector2(321, 310)
+
+[node name="Start" parent="." instance=ExtResource("7_ui13t")]
+position = Vector2(-207, -1250)
+
+[node name="Exit" parent="." instance=ExtResource("8_1bv6f")]
+position = Vector2(224, -1613)

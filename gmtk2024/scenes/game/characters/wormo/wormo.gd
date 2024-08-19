@@ -58,7 +58,6 @@ func _physics_process(delta):
 	if velocity.y > 0 && is_on_floor() == false:
 		animated_sprite.flip_v = true
 	else:
-		collision_box.shape.size = base_collision_size
 		animated_sprite.flip_v = false
 	if velocity.y > 500:
 		velocity.y = 500
@@ -86,6 +85,7 @@ func _physics_process(delta):
 		if direction != 0:
 			animated_sprite.flip_h = (direction == -1)
 	if is_on_floor() == true && Input.is_action_just_released("jump") == false && Input.is_action_pressed("jump") == false:
+		collision_box.shape.size = base_collision_size
 		velocity.x = direction * speed
 	prev_velocityX = velocity.x
 	move_and_slide()
