@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dow147f38aiwi"]
+[gd_scene load_steps=13 format=3 uid="uid://dow147f38aiwi"]
 
 [ext_resource type="Script" path="res://scenes/game/characters/flea_spawn.gd" id="1_4myx0"]
 [ext_resource type="Texture2D" uid="uid://cbx67g3qsfskm" path="res://assets/characters/flea.png" id="1_t8o4a"]
@@ -99,6 +99,9 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_5tn8m"]
 radius = 292.246
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ay3y"]
+size = Vector2(22, 23)
+
 [node name="flea" type="CharacterBody2D"]
 collision_layer = 0
 collision_mask = 0
@@ -140,4 +143,11 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_5tn8m")
 
+[node name="HurtBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_0ay3y")
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="HurtBox" to="." method="_on_hurt_box_body_entered"]

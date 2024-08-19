@@ -27,12 +27,12 @@ func _on_deathzone_body_entered(_body):
 	reset_player()
 	pass
 
-
-
 func reset_player():
 	player.velocity = Vector2.ZERO
 	player.global_position = start.get_spawn_pos()
 
 func _on_exit_body_entered(body):
 	prints("exit reached", body)
+	winCon = true
+	#Load next level here
 	pass

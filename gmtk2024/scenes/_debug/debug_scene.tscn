@@ -86,4 +86,4 @@ position = Vector2(399, -36)
 position = Vector2(1381, -17)
 
 [node name="Exit" parent="." instance=ExtResource("12_nwsmw")]
-position = Vector2(-144, -109)
+position = Vector2(3268, -77)
