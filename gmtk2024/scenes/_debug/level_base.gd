@@ -14,7 +14,7 @@ var winCon = false
 @onready var start = $Start
 @onready var exit = $Exit
 @onready var death_zone = $Deathzone
-@onready var hurt_sfx = preload("res://assets/sounds/SFX/SFX/Wormo/Wormo DEATH.wav")
+#@onready var hurt_sfx = preload("res://assets/sounds/SFX/SFX/Wormo/WormoDEATH.wav")
 
 @onready var hud = null
 
@@ -72,12 +72,12 @@ func arrow():
 		tween.tween_callback(brian)
 
 func on_monster_touched_player(monster):
-	GlobalTheme.play_sfx(hurt_sfx)
+	#GlobalTheme.play_sfx(hurt_sfx)
 	reset_player()
 	pass
 
 func _on_deathzone_body_entered(_body):
-	GlobalTheme.play_sfx(hurt_sfx)
+	#GlobalTheme.play_sfx(hurt_sfx)
 	reset_player()
 	pass
 
