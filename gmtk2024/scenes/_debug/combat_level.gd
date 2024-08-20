@@ -18,6 +18,8 @@ var player_health = 100
 
 var reflect_array = []
 
+@onready var spawn_timer = $Node2D/SpawnTimer
+
 func _ready():
 	player = get_tree().get_first_node_in_group("player")
 	boss = get_tree().get_first_node_in_group("boss")
@@ -55,10 +57,10 @@ func _on_slime_player_hit_boss():
 	#print("I've been hit")
 	#pass # Replace with function body.
 
-#func _process(_delta):
-	#for balls in reflect_array:
-		#
-	#pass
+func _process(_delta):
+	if boss_health <= 0:
+		#print("you win")
+		on_win()
 
 func _on_area_2d_area_entered(area):
 	print(area)
@@ -66,9 +68,12 @@ func _on_area_2d_area_entered(area):
 	#area.reverse()
 	pass # Replace with function body.
 
+func on_win():
+	get_tree().change_scene_to_packed(next_level)
+	pass
 
 func _on_dragonheart_area_entered(area):
-	boss_health -= 20
+	boss_health -= 10
 	boss_healthbar.value = boss_health
 	print("boom!")
 	pass # Replace with function body.

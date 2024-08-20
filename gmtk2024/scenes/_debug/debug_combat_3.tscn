@@ -199,7 +199,7 @@ shape = SubResource("RectangleShape2D_qwkbn")
 [node name="Marker2D" type="Marker2D" parent="Node2D"]
 position = Vector2(1278, 681)
 
-[node name="Timer" type="Timer" parent="Node2D"]
+[node name="SpawnTimer" type="Timer" parent="Node2D"]
 wait_time = 4.0
 autostart = true
 
@@ -245,4 +245,4 @@ value = 200.0
 [connection signal="animation_finished" from="Node2D/CharacterBody2D/AnimationPlayer" to="Node2D" method="_on_animation_player_animation_finished"]
 [connection signal="area_entered" from="Node2D/CharacterBody2D/Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Node2D/CharacterBody2D/Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="timeout" from="Node2D/Timer" to="Node2D" method="_on_timer_timeout"]
+[connection signal="timeout" from="Node2D/SpawnTimer" to="Node2D" method="_on_timer_timeout"]

@@ -4,6 +4,7 @@ signal burnt
 signal countered
 
 var witnessed = false
+var randomSpeed = randi_range(10, 20)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$AnimationPlayer.play("fire")
@@ -13,9 +14,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	
 	if witnessed == true:
-		self.global_position.x += 10
+		self.global_position.x += 25
 	else:
-		self.global_position.x += -10
+		self.global_position.x += -randomSpeed
 	#move_and_slide()
 
 

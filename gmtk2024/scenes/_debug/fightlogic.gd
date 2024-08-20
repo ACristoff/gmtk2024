@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var swingbox = $CharacterBody2D/Area2D/CollisionShape2D
+@onready var spawn_timer = $SpawnTimer
 
 var attack = true
 # Called when the node enters the scene tree for the first time.
@@ -25,7 +26,8 @@ func _on_timer_timeout() -> void:
 	FIRE.look_at($CharacterBody2D.global_position)
 	get_tree().get_root().add_child(FIRE)
 	FIRE.global_position = $Marker2D.global_position
-
+	var randomTimer = randi_range(2,5)
+	spawn_timer.start(randomTimer)
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == ("attack"):
