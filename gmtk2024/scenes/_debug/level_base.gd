@@ -58,8 +58,8 @@ func brian():
 func stage():
 	if is_slime == true:
 		var tween = create_tween()
-		tween.tween_property($TileMapLayer2, "scale", Vector2(2.01, 1.99), 1)
-		tween.tween_property($TileMapLayer2, "scale", Vector2(1.99, 2.01), 1)
+		tween.tween_property($TileMapLayer2, "scale", Vector2(2.01, 1.99), 5)
+		tween.tween_property($TileMapLayer2, "scale", Vector2(1.99, 2.01), 5)
 		tween.tween_callback(stage)
 
 func on_monster_touched_player(monster):
