@@ -20,6 +20,7 @@ var winCon = false
 
 func _ready():
 	brian()
+	stage()
 	$Wormo.is_stage_rat = is_rat
 	$Wormo.is_stage_slime = is_slime
 	player = get_tree().get_first_node_in_group("player")
@@ -53,9 +54,13 @@ func brian():
 		var tween = create_tween()
 		tween.tween_property($Slimebrain, "scale", Vector2(2.2, 1.9), 2)
 		tween.tween_property($Slimebrain, "scale", Vector2(1.9, 2.2), 2)
+		tween.tween_callback(brian)
+func stage():
+	if is_slime == true:
+		var tween = create_tween()
 		tween.tween_property($TileMapLayer2, "scale", Vector2(2.01, 1.99), 1)
 		tween.tween_property($TileMapLayer2, "scale", Vector2(1.99, 2.01), 1)
-		tween.tween_callback(brian)
+		tween.tween_callback(stage)
 
 func on_monster_touched_player(monster):
 	#print("touched by flea", monster)
