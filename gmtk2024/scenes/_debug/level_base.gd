@@ -42,7 +42,8 @@ func reset_player():
 func _on_exit_body_entered(body):
 	if body is Player:
 		if next_level != null:
-			await get_tree().create_timer(1).timeout
+			$AudioStreamPlayer2D.play()
+			await get_tree().create_timer(0.1).timeout
 			get_tree().change_scene_to_packed(next_level)
 		else:
 			#show win screen here

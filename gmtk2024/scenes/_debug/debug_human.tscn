@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scenes/_debug/level_base.gd" id="1_pjkfs"]
 [ext_resource type="Texture2D" uid="uid://dcje6o1y6xrev" path="res://assets/environment/humanground.png" id="2_fh4us"]
 [ext_resource type="AudioStream" uid="uid://dnsdwvpcc0nco" path="res://assets/sounds/MAN CLIMB.mp3" id="2_kgmhm"]
-[ext_resource type="PackedScene" path="res://scenes/_debug/debug_combat_3.tscn" id="2_u0luj"]
+[ext_resource type="PackedScene" uid="uid://6nc3fs2tk216" path="res://scenes/_debug/debug_combat_3.tscn" id="2_u0luj"]
 [ext_resource type="PackedScene" uid="uid://dep41i7inbx8y" path="res://scenes/game/characters/wormo/wormo.tscn" id="3_i6rc2"]
 [ext_resource type="Texture2D" uid="uid://becsjnphfebm2" path="res://assets/environment/humanback.png" id="4_sic2n"]
 [ext_resource type="PackedScene" uid="uid://clbj86jw7twd2" path="res://scenes/game/world/deathzone.tscn" id="6_pfy8s"]
