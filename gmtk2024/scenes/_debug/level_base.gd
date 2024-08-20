@@ -21,6 +21,7 @@ var winCon = false
 func _ready():
 	brian()
 	stage()
+	arrow()
 	$Wormo.is_stage_rat = is_rat
 	$Wormo.is_stage_slime = is_slime
 	player = get_tree().get_first_node_in_group("player")
@@ -60,6 +61,14 @@ func stage():
 		tween.tween_property($TileMapLayer2, "scale", Vector2(2.01, 1.99), 5)
 		tween.tween_property($TileMapLayer2, "scale", Vector2(1.99, 2.01), 5)
 		tween.tween_callback(stage)
+		
+func arrow():
+	if is_rat == true:
+		var tween = create_tween()
+		tween.TRANS_SINE
+		tween.tween_property($Arrow, "position", Vector2(3170, -278), 2)
+		tween.tween_property($Arrow, "position", Vector2(3170, -300), 2)
+		tween.tween_callback(brian)
 
 func on_monster_touched_player(monster):
 	GlobalTheme.play_sfx(hurt_sfx)

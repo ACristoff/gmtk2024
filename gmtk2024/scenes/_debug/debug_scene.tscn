@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://bqtt4wrgkvngo"]
+[gd_scene load_steps=20 format=4 uid="uid://bqtt4wrgkvngo"]
 
 [ext_resource type="Script" path="res://scenes/_debug/level_base.gd" id="1_huk3f"]
 [ext_resource type="PackedScene" uid="uid://c0stt80wn3u3f" path="res://scenes/game/world/tile_map.tscn" id="1_xi1eb"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cstjnjco17dia" path="res://assets/environment/ratface.png" id="10_ql17a"]
 [ext_resource type="PackedScene" uid="uid://dow147f38aiwi" path="res://scenes/game/characters/flea.tscn" id="11_vnfj4"]
 [ext_resource type="PackedScene" uid="uid://lq1qyt1nydoo" path="res://scenes/game/world/exit.tscn" id="12_nwsmw"]
+[ext_resource type="Texture2D" uid="uid://hkw1gvdnp8rd" path="res://assets/particle/arrow.png" id="15_tuabq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mqsiw"]
 texture = ExtResource("5_0kc24")
@@ -300,3 +301,9 @@ position = Vector2(913, -143)
 
 [node name="Exit" parent="." instance=ExtResource("12_nwsmw")]
 position = Vector2(3268, -77)
+
+[node name="Arrow" type="Sprite2D" parent="."]
+texture_filter = 3
+position = Vector2(3170, -278)
+scale = Vector2(2, 2)
+texture = ExtResource("15_tuabq")
