@@ -91,5 +91,3 @@ texture = ExtResource("5_4wve1")
 
 [node name="Rat" parent="." instance=ExtResource("3_vjl3h")]
 position = Vector2(939, 735)
-
-[connection signal="hit_boss" from="Rat" to="." method="_on_rat_hit_boss"]
