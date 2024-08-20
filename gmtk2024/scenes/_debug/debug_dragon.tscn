@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://dxx70rotcsgmy"]
+[gd_scene load_steps=11 format=4 uid="uid://dxx70rotcsgmy"]
 
 [ext_resource type="Script" path="res://scenes/_debug/level_base.gd" id="1_dosb4"]
 [ext_resource type="Texture2D" uid="uid://kqt41kmcn7qs" path="res://assets/environment/dragonground.png" id="1_m00wj"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://clbj86jw7twd2" path="res://scenes/game/world/deathzone.tscn" id="3_hpt5l"]
 [ext_resource type="PackedScene" uid="uid://57dkghi1trmf" path="res://scenes/game/world/start.tscn" id="5_kcjd7"]
 [ext_resource type="PackedScene" uid="uid://lq1qyt1nydoo" path="res://scenes/game/world/exit.tscn" id="6_4totm"]
+[ext_resource type="Texture2D" uid="uid://bmgahbme10p7p" path="res://assets/environment/dragonfront1.png" id="7_o3txv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l517r"]
 texture = ExtResource("1_m00wj")
@@ -203,9 +204,22 @@ position = Vector2(14, -2)
 position = Vector2(-13, 121)
 
 [node name="Start" parent="." instance=ExtResource("5_kcjd7")]
-position = Vector2(355, -1772)
+position = Vector2(25, -34)
 
 [node name="Exit" parent="." instance=ExtResource("6_4totm")]
 position = Vector2(462, -19)
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+z_index = -10
+scroll_scale = Vector2(1, 0.8)
+scroll_offset = Vector2(-264, -495)
+repeat_size = Vector2(0, 940)
+repeat_times = 3
+
+[node name="Dragonfront1" type="Sprite2D" parent="Parallax2D"]
+texture_filter = 3
+position = Vector2(1, -1)
+scale = Vector2(2, 2)
+texture = ExtResource("7_o3txv")
 
 [connection signal="body_entered" from="Deathzone" to="Wormo" method="_on_deathzone_body_entered"]
