@@ -26,6 +26,9 @@ func _ready():
 func _on_rat_hit_boss():
 	boss_health -= 20
 	boss_healthbar.value = boss_health
+	if boss_health <= 0:
+		await get_tree().create_timer(1).timeout
+		get_tree().change_scene_to_packed(next_level)
 	pass # Replace with function body.
 
 func _on_slime_boss_hit_player():
