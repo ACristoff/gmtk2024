@@ -35,7 +35,6 @@ func _ready():
 		GlobalTheme.play_music_level(level_theme)
 
 func _on_deathzone_body_entered(_body):
-	#print("oopsy woopsy!")
 	reset_player()
 	pass
 
@@ -63,7 +62,7 @@ func stage():
 		tween.tween_callback(stage)
 
 func on_monster_touched_player(monster):
-	#print("touched by flea", monster)
+	GlobalTheme.play_sfx(hurt_sfx)
 	reset_player()
 	pass
 

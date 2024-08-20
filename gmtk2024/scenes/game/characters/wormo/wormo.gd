@@ -61,11 +61,8 @@ func _physics_process(delta):
 	if velocity.y > 0 && is_on_floor() == false:
 		animated_sprite.flip_v = true
 	else:
-		#print(is_stage_rat)
 		if is_stage_rat == true:
-			#print('test')
 			if particle_refresh == true:
-				#print('test')
 				$ratparticle1.emitting = true
 				$ratparticle2.emitting = true
 				particle_refresh = false
