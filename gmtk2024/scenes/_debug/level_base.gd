@@ -16,6 +16,8 @@ var winCon = false
 @onready var hud = null
 
 func _ready():
+	$Wormo.is_stage_rat = false
+	$Wormo.is_stage_slime = true
 	player = get_tree().get_first_node_in_group("player")
 	if player != null:
 		player.global_position = start.get_spawn_pos()
