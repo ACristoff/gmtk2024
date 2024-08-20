@@ -6,9 +6,11 @@ class_name Boss
 @export var damage = 100
 @export var gravity = 500
 
+@onready var attack_timer = $AttackTimer
+var attack_cooldown = null
+
 var player_target = null
 var player_target_direction = "left"
-
 var direction = 0
 var attacking = false
 
@@ -17,6 +19,9 @@ signal hit_player
 func _ready():
 	var get_player = get_tree().get_first_node_in_group("player")
 	player_target = get_player
+	attack_cooldown = attack_timer.get_wait_time()
+	#attack_timer.
+
 
 func get_distance():
 	if ((player_target.global_position.x - global_position.x) <  0):
@@ -25,6 +30,7 @@ func get_distance():
 		return player_target.global_position.x - global_position.x
 
 func _physics_process(delta):
+	#print(attack_timer.time_left)
 	if is_on_floor() == false && attacking == false:
 		velocity.y += gravity * delta
 	elif attacking == false:
@@ -45,7 +51,7 @@ func walk_towards():
 	else:
 		player_target_direction = "right"
 		velocity.x = speed
-	if get_distance() > 200 && get_distance() < 320:
+	if get_distance() > 200 && get_distance() < 320 && attack_timer.time_left == 0:
 		attacking = true
 		velocity.x = 0
 	pass
@@ -65,12 +71,13 @@ func jump_to():
 
 func drop_to():
 	attacking = false
+	attack_timer.start(attack_cooldown)
 	pass
 
 
 func _on_splash_box_body_entered(body):
 	print(body)
-	##Randomize the direction?
+	##use direction
 	hit_player.emit()
 	velocity.x = 400
 	player_target.velocity.x = -200

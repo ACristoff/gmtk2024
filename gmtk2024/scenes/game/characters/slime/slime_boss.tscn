@@ -86,5 +86,6 @@ shape = SubResource("RectangleShape2D_ceg6a")
 
 [node name="AttackTimer" type="Timer" parent="."]
 wait_time = 5.0
+one_shot = true
 
 [connection signal="body_entered" from="SplashBox" to="." method="_on_splash_box_body_entered"]
