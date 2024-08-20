@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/_debug/level_base.gd" id="1_b11iq"]
 [ext_resource type="Texture2D" uid="uid://byeocby82gq6u" path="res://assets/environment/slimeground.png" id="1_qw7kc"]
-[ext_resource type="PackedScene" uid="uid://b01nlse44ih0x" path="res://scenes/_debug/debug_combat_2.tscn" id="2_754su"]
+[ext_resource type="PackedScene" path="res://scenes/_debug/debug_combat_2.tscn" id="2_754su"]
 [ext_resource type="AudioStream" uid="uid://bg8em7ic4gr84" path="res://assets/sounds/Slime Climb.mp3" id="2_ea1v5"]
 [ext_resource type="PackedScene" uid="uid://dep41i7inbx8y" path="res://scenes/game/characters/wormo/wormo.tscn" id="2_ymewe"]
 [ext_resource type="Texture2D" uid="uid://bii0s0jwb82ff" path="res://assets/environment/slimefront.png" id="3_hc1wn"]
