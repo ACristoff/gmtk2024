@@ -220,7 +220,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAQAHAAAAAAABAAAAAQAHAAAAAAACAAAAAQAHAAA
 tile_set = SubResource("TileSet_e7mej")
 
 [node name="Wormo" parent="." instance=ExtResource("3_i6rc2")]
-position = Vector2(-205, -1197)
+position = Vector2(97, -5)
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
 z_index = -10
@@ -237,7 +237,7 @@ texture = ExtResource("4_sic2n")
 position = Vector2(321, 310)
 
 [node name="Start" parent="." instance=ExtResource("7_ui13t")]
-position = Vector2(-207, -1250)
+position = Vector2(98, -63)
 
 [node name="Exit" parent="." instance=ExtResource("8_1bv6f")]
 position = Vector2(224, -1613)
