@@ -5,8 +5,8 @@
 [ext_resource type="AudioStream" uid="uid://l2exny04js2o" path="res://assets/sounds/Music/Slime Fight.mp3" id="3_tswta"]
 [ext_resource type="Texture2D" uid="uid://byeocby82gq6u" path="res://assets/environment/slimeground.png" id="4_26a1g"]
 [ext_resource type="PackedScene" uid="uid://57dkghi1trmf" path="res://scenes/game/world/start.tscn" id="5_s02fn"]
-[ext_resource type="PackedScene" uid="uid://bfn22b5yol6ty" path="res://scenes/game/characters/slime/slime_boss.tscn" id="6_sfdiv"]
 [ext_resource type="Texture2D" uid="uid://b6btthy6m7uqd" path="res://assets/environment/combatsewer.png" id="7_siqj6"]
+[ext_resource type="PackedScene" uid="uid://qrdld81cu0vn" path="res://scenes/game/characters/human/human_boss.tscn" id="8_63rxv"]
 [ext_resource type="PackedScene" uid="uid://bdlisbe2q6yl2" path="res://scenes/game/characters/rat/rat.tscn" id="8_a8mqh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ikic6"]
@@ -79,9 +79,6 @@ tile_set = SubResource("TileSet_y54n5")
 [node name="Start" parent="." instance=ExtResource("5_s02fn")]
 position = Vector2(674, 729)
 
-[node name="SlimeBoss" parent="." instance=ExtResource("6_sfdiv")]
-position = Vector2(1332, 778)
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
@@ -119,5 +116,7 @@ texture = ExtResource("7_siqj6")
 [node name="Rat" parent="." instance=ExtResource("8_a8mqh")]
 position = Vector2(939, 735)
 
-[connection signal="hit_player" from="SlimeBoss" to="." method="_on_slime_boss_hit_player"]
+[node name="HumanBoss" parent="." instance=ExtResource("8_63rxv")]
+position = Vector2(1411, 784)
+
 [connection signal="hit_boss" from="Rat" to="." method="_on_rat_hit_boss"]
