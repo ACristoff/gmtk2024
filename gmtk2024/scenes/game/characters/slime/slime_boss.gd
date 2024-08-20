@@ -12,6 +12,8 @@ var player_target_direction = "left"
 var direction = 0
 var attacking = false
 
+signal hit_player
+
 func _ready():
 	var get_player = get_tree().get_first_node_in_group("player")
 	player_target = get_player
@@ -27,11 +29,15 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 	elif attacking == false:
 		walk_towards()
+	if attacking == true:
+		jump_to()
 	move_and_slide()
 	pass
 
 ##Have the slime move towards the player
 func walk_towards():
+	if get_distance() < 130:
+		return
 	if player_target.global_position.x < global_position.x:
 		player_target_direction = "left"
 		velocity.x = -speed
@@ -40,38 +46,32 @@ func walk_towards():
 		player_target_direction = "right"
 		velocity.x = speed
 	if get_distance() > 200 && get_distance() < 320:
-		#print('Attack!')
 		attacking = true
 		velocity.x = 0
-		jump_to()
 	pass
 
 ##Have the slime jump onto the player
 func jump_to():
-	print('jumping to!')
+	var slime_tween = create_tween()
+	var target_position = Vector2(
+		player_target.global_position.x,
+		player_target.global_position.y - 200
+	)
+	slime_tween.tween_property(self, "global_position", target_position, 1)
+	slime_tween.finished.connect(drop_to)
+	await slime_tween.finished
+	drop_to()
 	pass
 
-#class_name MonsterMovement
-#extends Node
+func drop_to():
+	attacking = false
+	pass
 
-#@export var actor: CharacterBody2D
-#
-#var direction = 0
-#
-#func _input(_event):
-	#pass
-#
-#func _physics_process(delta):
-	#if actor.is_on_floor() == false:
-		#actor.velocity.y += gravity * delta
-	#direction = Input.get_axis("move_left", "move_right")
-	#actor.direction = direction
-	#if direction != 0:
-		#actor.animated_sprite.flip_h = (direction == -1)
-	#if actor.is_on_floor() == true && actor.override_x == false:
-		#actor.velocity.x = direction * speed
-	#actor.move_and_slide()
-	#pass
-#
-#func update_animations(_direction):
-	#pass
+
+func _on_splash_box_body_entered(body):
+	print(body)
+	##Randomize the direction?
+	hit_player.emit()
+	velocity.x = 400
+	player_target.velocity.x = -200
+	pass # Replace with function body.

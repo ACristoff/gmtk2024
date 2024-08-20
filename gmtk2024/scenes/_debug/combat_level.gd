@@ -4,6 +4,7 @@ extends Node2D
 @export var is_final_level: bool = false
 @export var level_theme: AudioStreamMP3 = null
 var player = null
+var boss = null
 var winCon = false
 @onready var start = $Start
 #@onready var death_zone = $Deathzone
@@ -14,6 +15,7 @@ var player_health = 100
 
 func _ready():
 	player = get_tree().get_first_node_in_group("player")
+	boss = get_tree().get_first_node_in_group("boss")
 	if level_theme != null:
 		GlobalTheme.play_music_level(level_theme)
 	pass
@@ -23,6 +25,10 @@ func _on_rat_hit_boss():
 	prints('boss health:', boss_health)
 	pass # Replace with function body.
 
+func _on_slime_boss_hit_player():
+	player_health -= 20
+	prints('player health:', player_health)
+	pass # Replace with function body.
 
 
 #func _ready():
