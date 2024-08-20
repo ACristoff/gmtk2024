@@ -29,9 +29,12 @@ func _on_rat_hit_boss():
 	if boss_health <= 0:
 		await get_tree().create_timer(1).timeout
 		get_tree().change_scene_to_packed(next_level)
-	pass # Replace with function body.
 
 func _on_slime_boss_hit_player():
 	player_health -= 20
 	player_healthbar.value = player_health
-	pass # Replace with function body.
+
+
+func _on_human_boss_hit_player():
+	player_health -= 20
+	player_healthbar.value = player_health
