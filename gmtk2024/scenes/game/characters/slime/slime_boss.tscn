@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bfn22b5yol6ty"]
+[gd_scene load_steps=9 format=3 uid="uid://bfn22b5yol6ty"]
 
 [ext_resource type="Texture2D" uid="uid://d0eeu3e2w0s2a" path="res://assets/characters/slime/slimesheet.png" id="1_wohwt"]
 [ext_resource type="Script" path="res://scenes/game/characters/slime/slime_boss.gd" id="1_wwnav"]
 
 [sub_resource type="Animation" id="Animation_5rwws"]
-length = 0.001
+length = 0.1
+step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -34,10 +35,15 @@ tracks/0/keys = {
 "values": [1]
 }
 
+[sub_resource type="Animation" id="Animation_gplum"]
+resource_name = "walk"
+step = 0.1
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_g820l"]
 _data = {
 "RESET": SubResource("Animation_5rwws"),
-"slime_attack": SubResource("Animation_ad7hx")
+"slime_attack": SubResource("Animation_ad7hx"),
+"walk": SubResource("Animation_gplum")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tbsy5"]
