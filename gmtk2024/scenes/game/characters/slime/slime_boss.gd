@@ -7,6 +7,7 @@ class_name Boss
 @export var gravity = 500
 
 @onready var attack_timer = $AttackTimer
+@onready var splash_box = $SplashBox/CollisionShape2D
 var attack_cooldown = null
 
 var player_target = null
@@ -17,6 +18,7 @@ var attacking = false
 signal hit_player
 
 func _ready():
+	#splash_box.disabled = true
 	var get_player = get_tree().get_first_node_in_group("player")
 	player_target = get_player
 	attack_cooldown = attack_timer.get_wait_time()
@@ -38,6 +40,10 @@ func _physics_process(delta):
 		walk_towards()
 	if attacking == true:
 		jump_to()
+	if player_target.global_position.x < global_position.x:
+		player_target_direction = "left"
+	else:
+		player_target_direction = "right"
 	move_and_slide()
 	pass
 
@@ -46,14 +52,12 @@ func _physics_process(delta):
 func walk_towards():
 	if get_distance() < 180:
 		return
-	if player_target.global_position.x < global_position.x:
-		player_target_direction = "left"
+	if player_target_direction == "left":
 		velocity.x = -speed
-		pass
 	else:
-		player_target_direction = "right"
 		velocity.x = speed
 	if get_distance() > 200 && get_distance() < 320 && attack_timer.time_left == 0:
+		splash_box.disabled = false
 		attacking = true
 		velocity.x = 0
 	pass
@@ -74,13 +78,35 @@ func jump_to():
 func drop_to():
 	attacking = false
 	attack_timer.start(attack_cooldown)
+	var hitbox_timer = null
+	if hitbox_timer == null:
+		hitbox_timer = get_tree().create_timer(2)
+		hitbox_timer.timeout.connect(disable_splashbox)
 	pass
 
+func disable_splashbox():
+	#print('disabling!')
+	splash_box.disabled = true
+	pass
 
 func _on_splash_box_body_entered(body):
-	print(body)
+	#print(body)
+	
+	if splash_box.disabled == true:
+		pass
+	else:
+		hit_player.emit()
+		#disable_splashbox()
 	##use direction
-	hit_player.emit()
-	velocity.x = 500
-	player_target.velocity.x = -200
+	if player_target_direction == "left":
+		velocity.x = 500
+		player_target.velocity.x = -200
+	else:
+		velocity.x = -500
+		player_target.velocity.x = 200
+	pass # Replace with function body.
+
+
+func _on_attack_timer_timeout():
+	#splash_box.disabled = false
 	pass # Replace with function body.
