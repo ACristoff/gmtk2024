@@ -3,7 +3,7 @@ extends Control
 @export var level_theme: AudioStreamMP3 = null
 @export var next_level: PackedScene = null
 
-@onready var instructions_panel = $PanelContainer 
+#@onready var instructions_panel = $PanelContainer 
 
 func _ready():
 	if level_theme != null:
@@ -24,10 +24,6 @@ func _ready():
 #func _on_exit_pressed():
 	#get_tree().quit()
 	#pass # Replace with function body.
-
-
-func _on_restart_pressed():
-	pass # Replace with function body.
 
 
 func _on_main_menu_2_pressed():

@@ -1,16 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://d4mjxqqfmtwhe"]
+[gd_scene load_steps=7 format=3 uid="uid://d4mjxqqfmtwhe"]
 
-[ext_resource type="Texture2D" uid="uid://3lk3i8202vu3" path="res://assets/Ui/backgrounds/9.png" id="1_papng"]
 [ext_resource type="Script" path="res://scenes/game/ui/game_over_ui.gd" id="1_v1a7x"]
 [ext_resource type="AudioStream" uid="uid://dtl8jj22eqjes" path="res://assets/sounds/Music/MP3/U WIN.mp3" id="2_n7xgm"]
-[ext_resource type="PackedScene" uid="uid://b4h6t3182l23y" path="res://scenes/game/ui/MainMenuUI.tscn" id="2_tcrca"]
 [ext_resource type="FontFile" uid="uid://cs8btg58u48y4" path="res://assets/Ui/fonts/Pixellari.ttf" id="3_474fu"]
 [ext_resource type="FontFile" uid="uid://beiumcvke46rr" path="res://assets/Ui/fonts/04B_30__.TTF" id="3_vi16l"]
 [ext_resource type="Script" path="res://scenes/game/ui/AnimationComponent.gd" id="4_c4c8g"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5ixhl"]
 
-[node name="Main Menu UI" type="Control"]
+[node name="Game Over UI" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -19,16 +17,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_v1a7x")
 level_theme = ExtResource("2_n7xgm")
-next_level = ExtResource("2_tcrca")
-
-[node name="Background" type="TextureRect" parent="."]
-visible = false
-layout_mode = 0
-offset_top = -195.0
-offset_right = 2478.0
-offset_bottom = 1085.0
-texture = ExtResource("1_papng")
-stretch_mode = 4
 
 [node name="Game Over!" type="RichTextLabel" parent="."]
 layout_mode = 0
@@ -66,6 +54,7 @@ text = "Restart"
 script = ExtResource("4_c4c8g")
 
 [node name="Main Menu2" type="Button" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 1410.0
 offset_top = 891.0

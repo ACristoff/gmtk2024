@@ -18,8 +18,6 @@ var player_health = 100
 
 var reflect_array = []
 
-@onready var spawn_timer = $Node2D/SpawnTimer
-
 func _ready():
 	player = get_tree().get_first_node_in_group("player")
 	boss = get_tree().get_first_node_in_group("boss")
