@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://qrdld81cu0vn"]
 
-[ext_resource type="Script" path="res://scenes/game/characters/slime/slime_boss.gd" id="1_u1rhl"]
+[ext_resource type="Script" path="res://scenes/game/characters/human/human_boss.gd" id="1_5pps5"]
 [ext_resource type="Texture2D" uid="uid://oxr5g534x3hv" path="res://assets/characters/human.png" id="2_wiav0"]
 
 [sub_resource type="Animation" id="Animation_5rwws"]
@@ -80,7 +80,7 @@ size = Vector2(70, 34)
 [node name="HumanBoss" type="CharacterBody2D" groups=["boss"]]
 collision_layer = 8
 collision_mask = 3
-script = ExtResource("1_u1rhl")
+script = ExtResource("1_5pps5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 3
