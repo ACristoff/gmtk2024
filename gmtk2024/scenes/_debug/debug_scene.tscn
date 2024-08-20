@@ -285,6 +285,13 @@ position = Vector2(3600, -29)
 scale = Vector2(3, 3)
 texture = ExtResource("10_ql17a")
 
+[node name="Ratface2" type="Sprite2D" parent="."]
+z_index = -1
+texture_filter = 3
+position = Vector2(3600, -29)
+scale = Vector2(3, 3)
+texture = ExtResource("10_ql17a")
+
 [node name="flea" parent="." instance=ExtResource("11_vnfj4")]
 position = Vector2(399, -36)
 
