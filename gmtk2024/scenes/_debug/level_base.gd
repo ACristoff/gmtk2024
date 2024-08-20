@@ -35,10 +35,6 @@ func _ready():
 	if level_theme != null:
 		GlobalTheme.play_music_level(level_theme)
 
-func _on_deathzone_body_entered(_body):
-	reset_player()
-	pass
-
 func reset_player():
 	player.velocity = Vector2.ZERO
 	player.global_position = start.get_spawn_pos()
@@ -75,6 +71,10 @@ func on_monster_touched_player(monster):
 	reset_player()
 	pass
 
+func _on_deathzone_body_entered(_body):
+	GlobalTheme.play_sfx(hurt_sfx)
+	reset_player()
+	pass
 
 func _on_slimedrip_slime() -> void:
 	is_slime = true
