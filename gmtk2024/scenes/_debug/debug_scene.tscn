@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://dow147f38aiwi" path="res://scenes/game/characters/flea.tscn" id="11_vnfj4"]
 [ext_resource type="PackedScene" uid="uid://lq1qyt1nydoo" path="res://scenes/game/world/exit.tscn" id="12_nwsmw"]
 [ext_resource type="Texture2D" uid="uid://bm2nvivjpgi21" path="res://assets/particle/arrow.png" id="15_tuabq"]
-[ext_resource type="AudioStream" uid="uid://148vlc3qm0cn" path="res://assets/sounds/SFX/Slime/Splat.wav" id="17_ajnry"]
+[ext_resource type="AudioStream" uid="uid://bm6yh1yi7hot" path="res://assets/sounds/SFX/Slime/Splat.wav" id="17_ajnry"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mqsiw"]
 texture = ExtResource("5_0kc24")
