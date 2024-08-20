@@ -77,6 +77,7 @@ fill_to = Vector2(0.197248, 0.821101)
 position = Vector2(581, 441)
 script = ExtResource("1_b11iq")
 level_theme = ExtResource("2_ea1v5")
+is_slime = true
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
 texture_filter = 3

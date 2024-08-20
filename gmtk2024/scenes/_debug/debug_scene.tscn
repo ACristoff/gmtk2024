@@ -16,6 +16,7 @@
 [node name="DebugLevel" type="Node2D"]
 script = ExtResource("1_huk3f")
 level_theme = ExtResource("2_0s3o5")
+is_rat = true
 
 [node name="Wormo" parent="." instance=ExtResource("2_dhfww")]
 position = Vector2(2580, -446)

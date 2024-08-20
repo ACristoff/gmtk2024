@@ -8,7 +8,9 @@ var player = null
 var timer_node = null
 var time_left = null
 var winCon = false
-var is_slime = false
+#var is_slime = false
+@export var is_slime = false
+@export var is_rat = false
 @onready var start = $Start
 @onready var exit = $Exit
 @onready var death_zone = $Deathzone
@@ -18,8 +20,9 @@ var is_slime = false
 
 func _ready():
 	brian()
-	$Wormo.is_stage_rat = false
-	$Wormo.is_stage_slime = true
+	$Wormo.is_stage_rat = is_rat
+	#$Wormo.is_stage_rat = false
+	#$Wormo.is_stage_slime = true
 	player = get_tree().get_first_node_in_group("player")
 	if player != null:
 		player.global_position = start.get_spawn_pos()
