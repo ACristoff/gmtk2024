@@ -71,7 +71,7 @@ tile_map_data = PackedByteArray("AAD//wAAAAAEAAAAAAAAAAAAAAAEAAAAAAABAAAAAAAEAAA
 tile_set = SubResource("TileSet_y54n5")
 
 [node name="Start" parent="." instance=ExtResource("2_isy11")]
-position = Vector2(990, 673)
+position = Vector2(674, 729)
 
 [node name="Rat" parent="." instance=ExtResource("3_vjl3h")]
 position = Vector2(990, 673)
@@ -82,7 +82,7 @@ limit_right = 1690
 limit_bottom = 9999645
 
 [node name="SlimeBoss" parent="." instance=ExtResource("4_6oa1b")]
-position = Vector2(1540, 800)
+position = Vector2(1332, 778)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
