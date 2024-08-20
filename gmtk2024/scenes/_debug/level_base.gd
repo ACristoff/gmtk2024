@@ -21,7 +21,6 @@ var winCon = false
 func _ready():
 	brian()
 	$Wormo.is_stage_rat = is_rat
-	#$Wormo.is_stage_rat = false
 	$Wormo.is_stage_slime = is_slime
 	player = get_tree().get_first_node_in_group("player")
 	if player != null:
@@ -58,6 +57,7 @@ func brian():
 
 func on_monster_touched_player(monster):
 	#print("touched by flea", monster)
+	reset_player()
 	pass
 
 

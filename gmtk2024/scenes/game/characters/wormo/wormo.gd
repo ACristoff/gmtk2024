@@ -69,6 +69,9 @@ func _physics_process(delta):
 				$ratparticle1.emitting = true
 				$ratparticle2.emitting = true
 				particle_refresh = false
+		if is_stage_slime == true && particle_refresh == true:
+			$slimeparticle1.emitting = true
+			$slimeparticle2.emitting = true
 		animated_sprite.flip_v = false
 	if velocity.y > 500:
 		velocity.y = 500
