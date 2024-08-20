@@ -91,7 +91,6 @@ func disable_splashbox():
 
 func _on_splash_box_body_entered(body):
 	#print(body)
-	
 	if splash_box.disabled == true:
 		pass
 	else:

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://byeocby82gq6u" path="res://assets/environment/slimeground.png" id="1_ce8m8"]
 [ext_resource type="PackedScene" uid="uid://bb05mfdiart5b" path="res://scenes/_debug/debug_slime.tscn" id="2_1rfny"]
 [ext_resource type="PackedScene" uid="uid://57dkghi1trmf" path="res://scenes/game/world/start.tscn" id="2_isy11"]
-[ext_resource type="AudioStream" uid="uid://l2exny04js2o" path="res://assets/sounds/Music/Slime Fight.mp3" id="2_whi7e"]
+[ext_resource type="AudioStream" uid="uid://bofhyd5v8thnf" path="res://assets/sounds/Music/Rat Fight.mp3" id="3_rbklv"]
 [ext_resource type="PackedScene" uid="uid://bdlisbe2q6yl2" path="res://scenes/game/characters/rat/rat.tscn" id="3_vjl3h"]
 [ext_resource type="PackedScene" uid="uid://bfn22b5yol6ty" path="res://scenes/game/characters/slime/slime_boss.tscn" id="4_6oa1b"]
 [ext_resource type="Texture2D" uid="uid://b6btthy6m7uqd" path="res://assets/environment/combatsewer.png" id="5_4wve1"]
@@ -66,7 +66,7 @@ sources/0 = SubResource("TileSetAtlasSource_ikic6")
 position = Vector2(0, -1)
 script = ExtResource("1_1dj55")
 next_level = ExtResource("2_1rfny")
-level_theme = ExtResource("2_whi7e")
+level_theme = ExtResource("3_rbklv")
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
 visible = false
