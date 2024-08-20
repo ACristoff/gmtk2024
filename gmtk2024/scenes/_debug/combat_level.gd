@@ -16,6 +16,8 @@ var winCon = false
 var boss_health = 200
 var player_health = 100
 
+var reflect_array = []
+
 func _ready():
 	player = get_tree().get_first_node_in_group("player")
 	boss = get_tree().get_first_node_in_group("boss")
@@ -46,4 +48,20 @@ func _on_slime_player_hit_boss():
 	if boss_health <= 0:
 		await get_tree().create_timer(1).timeout
 		get_tree().change_scene_to_packed(next_level)
+	pass # Replace with function body.
+
+
+func _on_area_2d_body_entered(body):
+	print(body)
+	pass # Replace with function body.
+
+#func _process(_delta):
+	#for balls in reflect_array:
+		#
+	#pass
+
+func _on_area_2d_area_entered(area):
+	print(area)
+	#reflect_array.append(area)
+	#area.reverse()
 	pass # Replace with function body.

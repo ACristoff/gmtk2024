@@ -1,6 +1,9 @@
 extends CharacterBody2D
 
+signal burnt
+signal countered
 
+var witnessed = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$AnimationPlayer.play("fire")
@@ -8,4 +11,22 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	self.global_position.x -= 1
+	
+	if witnessed == true:
+		self.global_position.x += 10
+	else:
+		self.global_position.x += -10
+	#move_and_slide()
+
+
+func _on_area_2d_body_entered(body):
+	print(body)
+	##if player, deal damage
+	##if swing, send to home
+	pass # Replace with function body.
+
+
+func _on_area_2d_area_entered(area):
+	witnessed = true
+	print("WITNESS ME")
+	pass # Replace with function body.

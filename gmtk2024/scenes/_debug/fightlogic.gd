@@ -1,8 +1,11 @@
 extends Node2D
 
+@onready var swingbox = $CharacterBody2D/Area2D/CollisionShape2D
+
 var attack = true
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	swingbox.disabled = true
 	pass
 
 
@@ -10,6 +13,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("attack"):
 		if attack == true:
+			swingbox.disabled = false
 			attackk()
 			attack = false
 		
@@ -26,3 +30,4 @@ func _on_timer_timeout() -> void:
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == ("attack"):
 		attack = true
+		swingbox.disabled = true
