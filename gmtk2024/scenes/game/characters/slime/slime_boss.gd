@@ -33,6 +33,7 @@ func _physics_process(delta):
 	#print(attack_timer.time_left)
 	if is_on_floor() == false && attacking == false:
 		velocity.y += gravity * delta
+	
 	elif attacking == false:
 		walk_towards()
 	if attacking == true:
@@ -40,9 +41,10 @@ func _physics_process(delta):
 	move_and_slide()
 	pass
 
+
 ##Have the slime move towards the player
 func walk_towards():
-	if get_distance() < 130:
+	if get_distance() < 180:
 		return
 	if player_target.global_position.x < global_position.x:
 		player_target_direction = "left"
@@ -79,6 +81,6 @@ func _on_splash_box_body_entered(body):
 	print(body)
 	##use direction
 	hit_player.emit()
-	velocity.x = 400
+	velocity.x = 500
 	player_target.velocity.x = -200
 	pass # Replace with function body.

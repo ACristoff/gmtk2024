@@ -9,7 +9,9 @@ var winCon = false
 @onready var start = $Start
 #@onready var death_zone = $Deathzone
 @onready var hurt_sfx = null
-@onready var hud = null
+#@onready var hud = null
+@onready var player_healthbar = $CanvasLayer/MarginContainer/GridContainer/PlayerHealthbar
+@onready var boss_healthbar = $CanvasLayer/MarginContainer/GridContainer/BossHealthbar
 var boss_health = 100
 var player_health = 100
 
@@ -22,12 +24,14 @@ func _ready():
 
 func _on_rat_hit_boss():
 	boss_health -= 20
-	prints('boss health:', boss_health)
+	boss_healthbar.value = boss_health
+	#prints('boss health:', boss_health)
 	pass # Replace with function body.
 
 func _on_slime_boss_hit_player():
 	player_health -= 20
-	prints('player health:', player_health)
+	player_healthbar.value = player_health
+	#prints('player health:', player_health)
 	pass # Replace with function body.
 
 

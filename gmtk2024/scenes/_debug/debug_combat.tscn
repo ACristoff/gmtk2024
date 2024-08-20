@@ -82,6 +82,30 @@ position = Vector2(1332, 778)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 37.0
+offset_bottom = 64.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_right = 100
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 100
+columns = 2
+
+[node name="PlayerHealthbar" type="ProgressBar" parent="CanvasLayer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+value = 100.0
+
+[node name="BossHealthbar" type="ProgressBar" parent="CanvasLayer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+value = 100.0
+
 [node name="Combatsewer" type="Sprite2D" parent="."]
 z_index = -10
 texture_filter = 3
