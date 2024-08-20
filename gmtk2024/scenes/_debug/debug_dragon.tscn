@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://dxx70rotcsgmy"]
+[gd_scene load_steps=13 format=4 uid="uid://dxx70rotcsgmy"]
 
 [ext_resource type="Script" path="res://scenes/_debug/level_base.gd" id="1_dosb4"]
 [ext_resource type="Texture2D" uid="uid://kqt41kmcn7qs" path="res://assets/environment/dragonground.png" id="1_m00wj"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://57dkghi1trmf" path="res://scenes/game/world/start.tscn" id="5_kcjd7"]
 [ext_resource type="PackedScene" uid="uid://lq1qyt1nydoo" path="res://scenes/game/world/exit.tscn" id="6_4totm"]
 [ext_resource type="Texture2D" uid="uid://bmgahbme10p7p" path="res://assets/environment/dragonfront1.png" id="7_o3txv"]
+[ext_resource type="Texture2D" uid="uid://bshstw61wm1ad" path="res://assets/environment/dragonbottom1.png" id="8_fpbe7"]
+[ext_resource type="Texture2D" uid="uid://cstnkavl4usja" path="res://assets/environment/dragondenback.png" id="9_qja6d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l517r"]
 texture = ExtResource("1_m00wj")
@@ -217,9 +219,39 @@ repeat_size = Vector2(0, 940)
 repeat_times = 3
 
 [node name="Dragonfront1" type="Sprite2D" parent="Parallax2D"]
+modulate = Color(0.29, 0.29, 0.29, 1)
 texture_filter = 3
 position = Vector2(1, -1)
 scale = Vector2(2, 2)
 texture = ExtResource("7_o3txv")
+
+[node name="Parallax2D2" type="Parallax2D" parent="."]
+modulate = Color(0.2, 0.2, 0.2, 1)
+z_index = -12
+scale = Vector2(1, -1)
+scroll_scale = Vector2(1, 0.5)
+scroll_offset = Vector2(-370, -495)
+repeat_size = Vector2(0, 940)
+repeat_times = 3
+
+[node name="Dragonfront1" type="Sprite2D" parent="Parallax2D2"]
+modulate = Color(0.29, 0.29, 0.29, 1)
+texture_filter = 3
+position = Vector2(1, -1)
+scale = Vector2(2, 2)
+texture = ExtResource("7_o3txv")
+
+[node name="Dragonbottom1" type="Sprite2D" parent="."]
+modulate = Color(0.29, 0.29, 0.29, 1)
+z_index = -11
+position = Vector2(1266, -925)
+scale = Vector2(9.32593, 6.45833)
+texture = ExtResource("8_fpbe7")
+
+[node name="Dragondenback" type="Sprite2D" parent="."]
+z_index = -14
+position = Vector2(881, -542)
+scale = Vector2(9.76667, 20.1704)
+texture = ExtResource("9_qja6d")
 
 [connection signal="body_entered" from="Deathzone" to="Wormo" method="_on_deathzone_body_entered"]
