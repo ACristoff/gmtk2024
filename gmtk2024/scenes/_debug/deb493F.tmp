@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://byeocby82gq6u" path="res://assets/environment/slimeground.png" id="4_26a1g"]
 [ext_resource type="PackedScene" uid="uid://57dkghi1trmf" path="res://scenes/game/world/start.tscn" id="5_s02fn"]
 [ext_resource type="Texture2D" uid="uid://b6btthy6m7uqd" path="res://assets/environment/combatsewer.png" id="7_siqj6"]
-[ext_resource type="PackedScene" uid="uid://ca5cqk8043jc7" path="res://scenes/game/characters/slime/slime_player.tscn" id="8_13unv"]
 [ext_resource type="PackedScene" uid="uid://qrdld81cu0vn" path="res://scenes/game/characters/human/human_boss.tscn" id="8_63rxv"]
+[ext_resource type="PackedScene" uid="uid://bdlisbe2q6yl2" path="res://scenes/game/characters/rat/rat.tscn" id="8_a8mqh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ikic6"]
 texture = ExtResource("4_26a1g")
@@ -113,10 +113,11 @@ position = Vector2(1032, 605)
 scale = Vector2(3, 3)
 texture = ExtResource("7_siqj6")
 
+[node name="Rat" parent="." instance=ExtResource("8_a8mqh")]
+position = Vector2(939, 735)
+
 [node name="HumanBoss" parent="." instance=ExtResource("8_63rxv")]
 position = Vector2(1411, 784)
 
-[node name="Slime_player" parent="." instance=ExtResource("8_13unv")]
-position = Vector2(685, 718)
-
+[connection signal="hit_boss" from="Rat" to="." method="_on_rat_hit_boss"]
 [connection signal="hit_player" from="HumanBoss" to="." method="_on_human_boss_hit_player"]

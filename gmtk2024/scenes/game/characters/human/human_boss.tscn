@@ -75,7 +75,7 @@ _data = {
 size = Vector2(74.5, 141.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ceg6a"]
-size = Vector2(70, 34)
+size = Vector2(48, 94)
 
 [node name="HumanBoss" type="CharacterBody2D" groups=["boss"]]
 collision_layer = 8
@@ -106,7 +106,7 @@ shape = SubResource("RectangleShape2D_o25qd")
 debug_color = Color(0.897404, 0.272787, 0.415876, 0.42)
 
 [node name="HurtBox" type="CollisionShape2D" parent="."]
-position = Vector2(26, -19)
+position = Vector2(18, -42)
 shape = SubResource("RectangleShape2D_ceg6a")
 
 [node name="AttackTimer" type="Timer" parent="."]

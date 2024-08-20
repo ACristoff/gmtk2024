@@ -56,7 +56,7 @@ func _physics_process(delta):
 ##Have the slime move towards the player
 func walk_towards():
 	if get_distance() < 200:
-		print('test')
+		#print('test')
 		if player_target_direction == "left":
 			velocity.x = (speed * 2)
 		else: 

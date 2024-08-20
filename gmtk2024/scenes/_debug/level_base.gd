@@ -14,7 +14,7 @@ var winCon = false
 @onready var start = $Start
 @onready var exit = $Exit
 @onready var death_zone = $Deathzone
-@onready var hurt_sfx = preload("res://assets/sounds/SFX/SFX/Wormo/Wormo DEATH.wav")
+@onready var hurt_sfx = preload("res://assets/sounds/SFX/Wormo/Wormo DEATH.wav")
 
 @onready var hud = null
 
@@ -42,8 +42,7 @@ func reset_player():
 func _on_exit_body_entered(body):
 	if body is Player:
 		if next_level != null:
-			$AudioStreamPlayer2D.play()
-			await get_tree().create_timer(0.1).timeout
+			await get_tree().create_timer(1).timeout
 			get_tree().change_scene_to_packed(next_level)
 		else:
 			#show win screen here
