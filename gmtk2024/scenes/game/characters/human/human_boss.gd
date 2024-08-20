@@ -1,5 +1,5 @@
 extends CharacterBody2D
-#class_name Boss
+class_name Boss2
 
 @export var speed = 100
 @export var jump = 100
@@ -15,6 +15,7 @@ var player_target = null
 var player_target_direction = "left"
 var direction = 0
 var attacking = false
+var tired = false
 
 signal hit_player
 
@@ -55,6 +56,9 @@ func _physics_process(delta):
 
 ##Have the slime move towards the player
 func walk_towards():
+	if tired == true:
+		velocity.x = 0
+		return
 	if get_distance() < 200:
 		#print('test')
 		if player_target_direction == "left":
@@ -82,30 +86,9 @@ func start_attack():
 	await get_tree().create_timer(0.5).timeout
 	splash_box.disabled = true
 	attacking = false
-	
-
-##Have the slime jump onto the player
-#func jump_to():
-	#var slime_tween = create_tween()
-	#var target_position = Vector2(
-		#player_target.global_position.x,
-		#player_target.global_position.y - 200
-	#)
-	#slime_tween.tween_property(self, "global_position", target_position, 1)
-	#slime_tween.finished.connect(drop_to)
-	#await slime_tween.finished
-	#drop_to()
-	#pass
-
-#func drop_to():
-	#$AnimationPlayer.play("move")
-	#attacking = false
-	#attack_timer.start(attack_cooldown)
-	#var hitbox_timer = null
-	#if hitbox_timer == null:
-		#hitbox_timer = get_tree().create_timer(2)
-		#hitbox_timer.timeout.connect(disable_splashbox)
-	#pass
+	tired = true
+	await get_tree().create_timer(2).timeout
+	tired = false
 
 func disable_splashbox():
 	#print('disabling!')
@@ -113,12 +96,10 @@ func disable_splashbox():
 	pass
 
 func _on_splash_box_body_entered(body):
-	#print(body)
 	if splash_box.disabled == true:
 		pass
 	else:
 		hit_player.emit()
-		#disable_splashbox()
 	##use direction
 	if player_target_direction == "left":
 		velocity.x = 500

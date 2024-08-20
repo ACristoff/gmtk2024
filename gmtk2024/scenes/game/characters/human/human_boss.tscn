@@ -72,7 +72,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o25qd"]
-size = Vector2(74.5, 141.5)
+size = Vector2(198.5, 141.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ceg6a"]
 size = Vector2(48, 94)
@@ -101,7 +101,7 @@ collision_layer = 8
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SwordBox"]
-position = Vector2(-135, -16)
+position = Vector2(-73, -16)
 shape = SubResource("RectangleShape2D_o25qd")
 debug_color = Color(0.897404, 0.272787, 0.415876, 0.42)
 

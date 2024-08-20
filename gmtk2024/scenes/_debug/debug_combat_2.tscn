@@ -120,3 +120,4 @@ position = Vector2(1411, 784)
 position = Vector2(685, 718)
 
 [connection signal="hit_player" from="HumanBoss" to="." method="_on_human_boss_hit_player"]
+[connection signal="hit_boss" from="Slime_player" to="." method="_on_slime_player_hit_boss"]

@@ -57,8 +57,10 @@ func _on_animation_player_animation_finished(anim_name):
 
 
 func _on_bite_box_body_entered(body):
+	print("Kill jester!")
 	print(body)
-	if body is Boss:
+	#hit_boss.emit()
+	if body is Boss || body is Boss2:
 		print('hit boss')
 		hit_boss.emit()
 		pass
