@@ -80,6 +80,7 @@ func start_attack():
 	splash_box.disabled = false
 	$AnimationPlayer.play("attack")
 	await get_tree().create_timer(0.5).timeout
+	splash_box.disabled = true
 	attacking = false
 	
 
