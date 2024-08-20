@@ -12,7 +12,6 @@ func play_sfx(new_stream: AudioStream, volume = 0.0):
 	fx_player.volume_db = volume
 	add_child(fx_player)
 	fx_player.play()
-	
 	await fx_player.finished
 	fx_player.queue_free()
 
@@ -25,4 +24,6 @@ func _play_music(music: AudioStream, volume = 0.0):
 	stream = music
 	volume_db = volume
 	play()
+	music.loop = true
+	print(music.loop)
 	pass
