@@ -14,7 +14,7 @@ var winCon = false
 @onready var start = $Start
 @onready var exit = $Exit
 @onready var death_zone = $Deathzone
-@onready var hurt_sfx = null
+@onready var hurt_sfx = preload("res://assets/sounds/Wormo Grunt 3.wav")
 
 @onready var hud = null
 

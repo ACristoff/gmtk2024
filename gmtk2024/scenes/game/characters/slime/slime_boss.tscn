@@ -3,6 +3,21 @@
 [ext_resource type="Texture2D" uid="uid://d0eeu3e2w0s2a" path="res://assets/characters/slime/slimesheet.png" id="1_wohwt"]
 [ext_resource type="Script" path="res://scenes/game/characters/slime/slime_boss.gd" id="1_wwnav"]
 
+[sub_resource type="Animation" id="Animation_5rwws"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
 [sub_resource type="Animation" id="Animation_ad7hx"]
 resource_name = "slime_attack"
 length = 0.5
@@ -14,21 +29,6 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0.0666667),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-
-[sub_resource type="Animation" id="Animation_5rwws"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [1]
@@ -46,7 +46,7 @@ size = Vector2(65.625, 74.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ceg6a"]
 size = Vector2(70, 34)
 
-[node name="SlimeBoss" type="CharacterBody2D"]
+[node name="SlimeBoss" type="CharacterBody2D" groups=["boss"]]
 collision_layer = 8
 collision_mask = 3
 script = ExtResource("1_wwnav")
