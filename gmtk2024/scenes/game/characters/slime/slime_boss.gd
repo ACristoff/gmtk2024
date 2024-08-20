@@ -7,6 +7,7 @@ class_name Boss
 @export var gravity = 500
 
 @onready var attack_timer = $AttackTimer
+@onready var splash_box = $SplashBox/CollisionShape2D
 var attack_cooldown = null
 
 var player_target = null
@@ -17,6 +18,7 @@ var attacking = false
 signal hit_player
 
 func _ready():
+	#splash_box.disabled = true
 	var get_player = get_tree().get_first_node_in_group("player")
 	player_target = get_player
 	attack_cooldown = attack_timer.get_wait_time()
@@ -54,6 +56,7 @@ func walk_towards():
 		player_target_direction = "right"
 		velocity.x = speed
 	if get_distance() > 200 && get_distance() < 320 && attack_timer.time_left == 0:
+		splash_box.disabled = false
 		attacking = true
 		velocity.x = 0
 	pass
@@ -78,9 +81,17 @@ func drop_to():
 
 
 func _on_splash_box_body_entered(body):
-	print(body)
+	#print(body)
+	if splash_box.disabled == true:
+		pass
+	else:
+		hit_player.emit()
 	##use direction
-	hit_player.emit()
 	velocity.x = 500
 	player_target.velocity.x = -200
+	pass # Replace with function body.
+
+
+func _on_attack_timer_timeout():
+	#splash_box.disabled = false
 	pass # Replace with function body.
