@@ -39,7 +39,7 @@ func _physics_process(delta):
 	elif attacking == false:
 		walk_towards()
 	if attacking == true:
-		jump_to()
+		start_jump()
 	if player_target.global_position.x < global_position.x:
 		player_target_direction = "left"
 	else:
@@ -65,7 +65,8 @@ func walk_towards():
 		attacking = true
 		velocity.x = 0
 	pass
-
+func start_jump():
+	$AnimationPlayer.play("attack")
 ##Have the slime jump onto the player
 func jump_to():
 	var slime_tween = create_tween()
@@ -80,6 +81,7 @@ func jump_to():
 	pass
 
 func drop_to():
+	$AnimationPlayer.play("move")
 	attacking = false
 	attack_timer.start(attack_cooldown)
 	var hitbox_timer = null
@@ -113,3 +115,8 @@ func _on_splash_box_body_entered(body):
 func _on_attack_timer_timeout():
 	#splash_box.disabled = false
 	pass # Replace with function body.
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "attack":
+		jump_to()

@@ -16,7 +16,7 @@ func _on_start_game_pressed():
 
 
 func _on_controls_pressed():
-	pass # Replace with function body.
+	pass
 
 
 func _on_exit_pressed():
