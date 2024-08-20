@@ -22,7 +22,7 @@ func _ready():
 	brian()
 	$Wormo.is_stage_rat = is_rat
 	#$Wormo.is_stage_rat = false
-	#$Wormo.is_stage_slime = true
+	$Wormo.is_stage_slime = is_slime
 	player = get_tree().get_first_node_in_group("player")
 	if player != null:
 		player.global_position = start.get_spawn_pos()
