@@ -1,7 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://b4h6t3182l23y"]
+[gd_scene load_steps=11 format=3 uid="uid://b4h6t3182l23y"]
 
 [ext_resource type="Texture2D" uid="uid://v1x0hckwdk5d" path="res://scenes/game/ui/il_794xN.4974376048_f3z0.jpg" id="1_midmi"]
+[ext_resource type="Script" path="res://scenes/game/ui/main_menu_ui.gd" id="1_rym8g"]
+[ext_resource type="AudioStream" uid="uid://bvm8jrg65fwe3" path="res://assets/sounds/Wormo's Theme.mp3" id="2_14ew1"]
 [ext_resource type="Texture2D" uid="uid://c0e1xsjlnvhe3" path="res://assets/Ui/logo.png" id="2_g15ap"]
+[ext_resource type="PackedScene" uid="uid://bqtt4wrgkvngo" path="res://scenes/_debug/debug_scene.tscn" id="3_8iarj"]
 [ext_resource type="FontFile" uid="uid://cs8btg58u48y4" path="res://assets/Ui/fonts/Pixellari.ttf" id="4_efpax"]
 [ext_resource type="Script" path="res://scenes/game/ui/AnimationComponent.gd" id="4_nicsl"]
 [ext_resource type="Script" path="res://scenes/game/ui/AnimationComponentExit.gd" id="5_gdhd6"]
@@ -17,6 +20,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_rym8g")
+level_theme = ExtResource("2_14ew1")
+next_level = ExtResource("3_8iarj")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
@@ -63,7 +69,7 @@ text = "Start Game"
 [node name="AnimationComponent" type="Node" parent="Start Game"]
 script = ExtResource("4_nicsl")
 
-[node name="Options" type="Button" parent="."]
+[node name="Controls" type="Button" parent="."]
 layout_mode = 0
 offset_left = 1384.0
 offset_top = 756.0
@@ -83,9 +89,9 @@ theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_elxg8")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_elxg8")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_elxg8")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_elxg8")
-text = "Options"
+text = "Controls"
 
-[node name="AnimationComponent" type="Node" parent="Options"]
+[node name="AnimationComponent" type="Node" parent="Controls"]
 script = ExtResource("4_nicsl")
 
 [node name="Exit" type="Button" parent="."]
@@ -112,3 +118,7 @@ text = "Exit"
 
 [node name="AnimationComponentExit" type="Node" parent="Exit"]
 script = ExtResource("5_gdhd6")
+
+[connection signal="pressed" from="Start Game" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="Controls" to="." method="_on_controls_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

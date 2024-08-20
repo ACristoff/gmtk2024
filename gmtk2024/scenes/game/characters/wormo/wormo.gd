@@ -60,7 +60,7 @@ func _physics_process(delta):
 	velocity.y += gravity * delta
 	if velocity.y > 0 && is_on_floor() == false:
 		animated_sprite.flip_v = true
-		velocity.x += direction * (speed * 0.05)
+		velocity.x += direction * (speed * 0.02)
 	else:
 		if is_stage_rat == true:
 			if particle_refresh == true:
