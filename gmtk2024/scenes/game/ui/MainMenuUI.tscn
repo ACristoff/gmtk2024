@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://v1x0hckwdk5d" path="res://scenes/game/ui/il_794xN.4974376048_f3z0.jpg" id="1_midmi"]
 [ext_resource type="Script" path="res://scenes/game/ui/main_menu_ui.gd" id="1_rym8g"]
-[ext_resource type="AudioStream" uid="uid://bvm8jrg65fwe3" path="res://assets/sounds/Wormo's Theme.mp3" id="2_14ew1"]
 [ext_resource type="Texture2D" uid="uid://c0e1xsjlnvhe3" path="res://assets/Ui/logo.png" id="2_g15ap"]
+[ext_resource type="AudioStream" uid="uid://blkm6c2g6ndqh" path="res://assets/sounds/Music/MCP Main Theme.mp3" id="2_xdjl4"]
 [ext_resource type="PackedScene" uid="uid://bqtt4wrgkvngo" path="res://scenes/_debug/debug_scene.tscn" id="3_8iarj"]
 [ext_resource type="FontFile" uid="uid://cs8btg58u48y4" path="res://assets/Ui/fonts/Pixellari.ttf" id="4_efpax"]
 [ext_resource type="Script" path="res://scenes/game/ui/AnimationComponent.gd" id="4_nicsl"]
@@ -24,7 +24,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_rym8g")
-level_theme = ExtResource("2_14ew1")
+level_theme = ExtResource("2_xdjl4")
 next_level = ExtResource("3_8iarj")
 
 [node name="Background" type="TextureRect" parent="."]
