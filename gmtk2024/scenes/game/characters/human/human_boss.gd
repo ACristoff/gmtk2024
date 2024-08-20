@@ -80,7 +80,10 @@ func start_attack():
 	attacking = true
 	await get_tree().create_timer(1.0).timeout
 	print("SWING!")
-	velocity.x = -500
+	if player_target_direction == "left":
+		velocity.x = -500
+	else: 
+		velocity.x = 500
 	splash_box.disabled = false
 	$AnimationPlayer.play("attack")
 	await get_tree().create_timer(0.5).timeout
