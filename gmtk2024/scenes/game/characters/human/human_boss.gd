@@ -56,6 +56,7 @@ func _physics_process(delta):
 ##Have the slime move towards the player
 func walk_towards():
 	if get_distance() < 200:
+		print('test')
 		if player_target_direction == "left":
 			velocity.x = (speed * 2)
 		else: 
@@ -67,12 +68,20 @@ func walk_towards():
 		velocity.x = speed
 	if get_distance() > 200 && get_distance() < 320 && attack_timer.time_left == 0:
 		#splash_box.disabled = false
-		attacking = true
+		start_attack()
 		velocity.x = 0
 	pass
 
 func start_attack():
+	attacking = true
+	await get_tree().create_timer(1.0).timeout
+	print("SWING!")
+	velocity.x = -500
+	splash_box.disabled = false
 	$AnimationPlayer.play("attack")
+	await get_tree().create_timer(0.5).timeout
+	attacking = false
+	
 
 ##Have the slime jump onto the player
 #func jump_to():
