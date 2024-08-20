@@ -247,6 +247,7 @@ position = Vector2(270, -1666)
 
 [node name="Manface1" type="Sprite2D" parent="."]
 z_index = -10
+texture_filter = 3
 position = Vector2(420, -1444)
 scale = Vector2(2, 2)
 texture = ExtResource("10_knx7g")
