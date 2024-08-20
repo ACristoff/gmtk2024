@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://b12cfh7bpdwmk"]
+[gd_scene load_steps=19 format=4 uid="uid://b12cfh7bpdwmk"]
 
 [ext_resource type="Script" path="res://scenes/_debug/combat_level.gd" id="1_epc21"]
 [ext_resource type="PackedScene" uid="uid://dipslppttx2er" path="res://scenes/_debug/debug_dragon.tscn" id="2_elpgp"]
@@ -10,6 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://b7ri8fp7hhg78" path="res://assets/environment/dragon1.png" id="7_ip05p"]
 [ext_resource type="Texture2D" uid="uid://oxr5g534x3hv" path="res://assets/characters/human.png" id="8_d7i3s"]
 [ext_resource type="Script" path="res://scenes/_debug/jankhuman.gd" id="8_mjyxu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ldc4"]
+size = Vector2(57.5, 138.5)
 
 [sub_resource type="Animation" id="Animation_a6brh"]
 length = 0.001
@@ -158,6 +161,14 @@ position = Vector2(1222, 583)
 scale = Vector2(4, 4)
 texture = ExtResource("7_ip05p")
 
+[node name="dragonheart" type="Area2D" parent="Node2D/Dragon1"]
+collision_layer = 32
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Dragon1/dragonheart"]
+position = Vector2(143, -9.25)
+shape = SubResource("RectangleShape2D_4ldc4")
+
 [node name="CharacterBody2D" type="CharacterBody2D" parent="Node2D"]
 position = Vector2(660, 716)
 collision_layer = 3
@@ -230,6 +241,7 @@ size_flags_horizontal = 3
 max_value = 200.0
 value = 200.0
 
+[connection signal="area_entered" from="Node2D/Dragon1/dragonheart" to="." method="_on_dragonheart_area_entered"]
 [connection signal="animation_finished" from="Node2D/CharacterBody2D/AnimationPlayer" to="Node2D" method="_on_animation_player_animation_finished"]
 [connection signal="area_entered" from="Node2D/CharacterBody2D/Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Node2D/CharacterBody2D/Area2D" to="." method="_on_area_2d_body_entered"]

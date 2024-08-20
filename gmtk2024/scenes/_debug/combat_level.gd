@@ -51,9 +51,9 @@ func _on_slime_player_hit_boss():
 	pass # Replace with function body.
 
 
-func _on_area_2d_body_entered(body):
-	print(body)
-	pass # Replace with function body.
+#func _on_area_2d_body_entered(body):
+	#print("I've been hit")
+	#pass # Replace with function body.
 
 #func _process(_delta):
 	#for balls in reflect_array:
@@ -64,4 +64,11 @@ func _on_area_2d_area_entered(area):
 	print(area)
 	#reflect_array.append(area)
 	#area.reverse()
+	pass # Replace with function body.
+
+
+func _on_dragonheart_area_entered(area):
+	boss_health -= 20
+	boss_healthbar.value = boss_health
+	print("boom!")
 	pass # Replace with function body.
