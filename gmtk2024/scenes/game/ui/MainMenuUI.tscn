@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b4h6t3182l23y"]
+[gd_scene load_steps=12 format=3 uid="uid://b4h6t3182l23y"]
 
 [ext_resource type="Texture2D" uid="uid://v1x0hckwdk5d" path="res://scenes/game/ui/il_794xN.4974376048_f3z0.jpg" id="1_midmi"]
 [ext_resource type="Script" path="res://scenes/game/ui/main_menu_ui.gd" id="1_rym8g"]
@@ -8,6 +8,7 @@
 [ext_resource type="FontFile" uid="uid://cs8btg58u48y4" path="res://assets/Ui/fonts/Pixellari.ttf" id="4_efpax"]
 [ext_resource type="Script" path="res://scenes/game/ui/AnimationComponent.gd" id="4_nicsl"]
 [ext_resource type="Script" path="res://scenes/game/ui/AnimationComponentExit.gd" id="5_gdhd6"]
+[ext_resource type="FontFile" uid="uid://d8860reaf3b4" path="res://assets/Ui/fonts/Crang (Title).ttf" id="9_w4e8e"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_elxg8"]
 
@@ -32,6 +33,7 @@ texture = ExtResource("1_midmi")
 stretch_mode = 4
 
 [node name="Logo" type="TextureRect" parent="."]
+visible = false
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
@@ -118,6 +120,17 @@ text = "Exit"
 
 [node name="AnimationComponentExit" type="Node" parent="Exit"]
 script = ExtResource("5_gdhd6")
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 3
+layout_mode = 0
+offset_left = 39.0
+offset_top = 50.0
+offset_right = 1207.0
+offset_bottom = 310.0
+theme_override_fonts/font = ExtResource("9_w4e8e")
+theme_override_font_sizes/font_size = 150
+text = "Parasync"
 
 [connection signal="pressed" from="Start Game" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="Controls" to="." method="_on_controls_pressed"]
