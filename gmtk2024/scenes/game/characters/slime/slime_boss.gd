@@ -8,6 +8,7 @@ class_name Boss
 
 var player_target = null
 var player_target_direction = "left"
+var player_target_distance = 0
 
 var direction = 0
 var override_x = false
@@ -15,7 +16,18 @@ var override_x = false
 func _ready():
 	var get_player = get_tree().get_first_node_in_group("player")
 	player_target = get_player
-	print(player_target)
+	#if ((player_target.global_position.x - global_position.x) <  0):
+		#player_target_distance = global_position.x - player_target.global_position.x
+	#else:
+		#player_target_distance = player_target.global_position.x - global_position.x
+	player_target_distance = get_distance()
+	print(player_target_distance)
+
+func get_distance():
+	if ((player_target.global_position.x - global_position.x) <  0):
+		return global_position.x - player_target.global_position.x
+	else:
+		return player_target.global_position.x - global_position.x
 
 func _physics_process(delta):
 	if is_on_floor() == false:
@@ -34,7 +46,8 @@ func walk_towards():
 	else:
 		player_target_direction = "right"
 		velocity.x = speed
-	#prints(player_target_direction)
+	if get_distance() > 200 && get_distance() < 320:
+		print('Attack!')
 	pass
 
 ##Have the slime jump onto the player
