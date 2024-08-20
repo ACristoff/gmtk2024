@@ -3,6 +3,7 @@ extends Control
 @export var level_theme: AudioStreamMP3 = null
 @export var next_level: PackedScene = null
 
+@onready var instructions_panel = $PanelContainer 
 
 func _ready():
 	if level_theme != null:
@@ -16,6 +17,7 @@ func _on_start_game_pressed():
 
 
 func _on_controls_pressed():
+	instructions_panel.visible = !instructions_panel.visible
 	pass # Replace with function body.
 
 
