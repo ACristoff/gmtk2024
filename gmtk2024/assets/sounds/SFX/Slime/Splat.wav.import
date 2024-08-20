@@ -2,7 +2,11 @@
 
 importer="wav"
 type="AudioStreamWAV"
+<<<<<<< HEAD
 uid="uid://cmgjk1tinlkmn"
+=======
+uid="uid://148vlc3qm0cn"
+>>>>>>> f6bc4e9005da084ddd4e03bce19f5600f4f96413
 path="res://.godot/imported/Splat.wav-db12d9d0ee70c3c3ecbadcdc7b462b31.sample"
 
 [deps]
