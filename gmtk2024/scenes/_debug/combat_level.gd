@@ -13,7 +13,7 @@ extends Node2D
 var player = null
 var boss = null
 var winCon = false
-var boss_health = 100
+var boss_health = 200
 var player_health = 100
 
 func _ready():

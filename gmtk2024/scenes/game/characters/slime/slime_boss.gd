@@ -40,6 +40,10 @@ func _physics_process(delta):
 		walk_towards()
 	if attacking == true:
 		jump_to()
+	if player_target.global_position.x < global_position.x:
+		player_target_direction = "left"
+	else:
+		player_target_direction = "right"
 	move_and_slide()
 	pass
 
@@ -48,12 +52,9 @@ func _physics_process(delta):
 func walk_towards():
 	if get_distance() < 180:
 		return
-	if player_target.global_position.x < global_position.x:
-		player_target_direction = "left"
+	if player_target_direction == "left":
 		velocity.x = -speed
-		pass
 	else:
-		player_target_direction = "right"
 		velocity.x = speed
 	if get_distance() > 200 && get_distance() < 320 && attack_timer.time_left == 0:
 		splash_box.disabled = false
@@ -87,8 +88,13 @@ func _on_splash_box_body_entered(body):
 	else:
 		hit_player.emit()
 	##use direction
-	velocity.x = 500
-	player_target.velocity.x = -200
+	if player_target_direction == "left":
+		velocity.x = 500
+		player_target.velocity.x = -200
+	else:
+		velocity.x = -500
+		player_target.velocity.x = 200
+
 	pass # Replace with function body.
 
 

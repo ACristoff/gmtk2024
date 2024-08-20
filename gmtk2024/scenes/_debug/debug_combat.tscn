@@ -104,7 +104,8 @@ value = 100.0
 [node name="BossHealthbar" type="ProgressBar" parent="CanvasLayer/MarginContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-value = 100.0
+max_value = 200.0
+value = 200.0
 
 [node name="Combatsewer" type="Sprite2D" parent="."]
 z_index = -10
