@@ -1,9 +1,11 @@
-[gd_scene load_steps=28 format=3 uid="uid://dep41i7inbx8y"]
+[gd_scene load_steps=30 format=3 uid="uid://dep41i7inbx8y"]
 
 [ext_resource type="Script" path="res://scenes/game/characters/wormo/wormo.gd" id="1_q6aup"]
 [ext_resource type="Texture2D" uid="uid://bu27pv1m4wc5" path="res://assets/particle/hair1.png" id="3_1r3d7"]
 [ext_resource type="Texture2D" uid="uid://cvekmxu325h2y" path="res://assets/characters/wormyparasprite.png" id="3_307m4"]
 [ext_resource type="Texture2D" uid="uid://351db4oae78i" path="res://assets/particle/hair2.png" id="4_vmt2x"]
+[ext_resource type="Texture2D" uid="uid://tiqkwfd026uw" path="res://assets/particle/slime1.png" id="5_ge8t7"]
+[ext_resource type="Texture2D" uid="uid://bgp1o4mva2lw7" path="res://assets/particle/slime2.png" id="6_mt5bg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cfib4"]
 atlas = ExtResource("3_307m4")
@@ -236,6 +238,46 @@ one_shot = true
 explosiveness = 1.0
 randomness = 1.0
 texture = ExtResource("4_vmt2x")
+direction = Vector2(0, -1)
+spread = 90.91
+gravity = Vector2(0, 100)
+initial_velocity_min = 30.3
+initial_velocity_max = 60.6
+angular_velocity_min = -44.04
+angular_velocity_max = 58.19
+scale_amount_min = 2.0
+scale_amount_max = 2.0
+anim_speed_max = 1.0
+anim_offset_max = 1.0
+
+[node name="slimeparticle1" type="CPUParticles2D" parent="."]
+texture_filter = 3
+emitting = false
+amount = 2
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+texture = ExtResource("5_ge8t7")
+direction = Vector2(0, -1)
+spread = 90.91
+gravity = Vector2(0, 100)
+initial_velocity_min = 30.3
+initial_velocity_max = 60.6
+angular_velocity_min = -44.04
+angular_velocity_max = 58.19
+scale_amount_min = 2.0
+scale_amount_max = 2.0
+anim_speed_max = 1.0
+anim_offset_max = 1.0
+
+[node name="slimeparticle2" type="CPUParticles2D" parent="."]
+texture_filter = 3
+emitting = false
+amount = 3
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+texture = ExtResource("6_mt5bg")
 direction = Vector2(0, -1)
 spread = 90.91
 gravity = Vector2(0, 100)

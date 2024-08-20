@@ -53,6 +53,8 @@ func brian():
 		var tween = create_tween()
 		tween.tween_property($Slimebrain, "scale", Vector2(2.2, 1.9), 2)
 		tween.tween_property($Slimebrain, "scale", Vector2(1.9, 2.2), 2)
+		tween.tween_property($TileMapLayer2, "scale", Vector2(2.01, 1.99), 1)
+		tween.tween_property($TileMapLayer2, "scale", Vector2(1.99, 2.01), 1)
 		tween.tween_callback(brian)
 
 func on_monster_touched_player(monster):
