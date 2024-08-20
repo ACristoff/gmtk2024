@@ -219,7 +219,7 @@ script = ExtResource("1_huk3f")
 level_theme = ExtResource("2_0s3o5")
 
 [node name="Wormo" parent="." instance=ExtResource("2_dhfww")]
-position = Vector2(2580, -446)
+position = Vector2(-311, -33)
 
 [node name="TileMapLayer" parent="." instance=ExtResource("1_xi1eb")]
 texture_filter = 3
