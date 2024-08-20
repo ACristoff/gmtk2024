@@ -8,6 +8,8 @@ extends CharacterBody2D
 var bite_box_init_position = 0
 var hurt_box_init_position = 0
 
+signal hit_boss
+
 @export var lungeX = 300
 @export var lungeY = 120
 
@@ -63,5 +65,6 @@ func _on_bite_box_body_entered(body):
 	print(body)
 	if body is Boss:
 		print('hit boss')
+		hit_boss.emit()
 		pass
 	pass # Replace with function body.

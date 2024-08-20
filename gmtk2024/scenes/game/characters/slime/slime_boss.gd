@@ -29,9 +29,11 @@ func _physics_process(delta):
 func walk_towards():
 	if player_target.global_position.x < global_position.x:
 		player_target_direction = "left"
+		velocity.x = -speed
 		pass
 	else:
 		player_target_direction = "right"
+		velocity.x = speed
 	#prints(player_target_direction)
 	pass
 

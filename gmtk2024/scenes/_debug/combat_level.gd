@@ -10,6 +10,7 @@ var winCon = false
 @onready var hurt_sfx = null
 @onready var hud = null
 var boss_health = 100
+var player_health = 100
 
 func _ready():
 	player = get_tree().get_first_node_in_group("player")
@@ -17,6 +18,10 @@ func _ready():
 		GlobalTheme.play_music_level(level_theme)
 	pass
 
+func _on_rat_hit_boss():
+	boss_health -= 20
+	prints('boss health:', boss_health)
+	pass # Replace with function body.
 
 
 
