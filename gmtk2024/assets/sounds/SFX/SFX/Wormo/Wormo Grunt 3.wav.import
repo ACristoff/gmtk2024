@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bra5yiasa4u62"
+path="res://.godot/imported/Wormo Grunt 3.wav-b826a81f10d27c92a4f65d5f07f92a61.sample"
+
+[deps]
+
+source_file="res://assets/sounds/SFX/SFX/Wormo/Wormo Grunt 3.wav"
+dest_files=["res://.godot/imported/Wormo Grunt 3.wav-b826a81f10d27c92a4f65d5f07f92a61.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

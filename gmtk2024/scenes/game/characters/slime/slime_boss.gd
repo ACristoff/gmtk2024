@@ -7,6 +7,7 @@ extends CharacterBody2D
 @export var gravity = 500
 
 var player_target = null
+var player_target_direction = "left"
 
 var direction = 0
 var override_x = false
@@ -19,11 +20,19 @@ func _ready():
 func _physics_process(delta):
 	if is_on_floor() == false:
 		velocity.y += gravity * delta
+	else:
+		walk_towards()
 	move_and_slide()
 	pass
 
 ##Have the slime move towards the player
 func walk_towards():
+	if player_target.global_position.x < global_position.x:
+		player_target_direction = "left"
+		pass
+	else:
+		player_target_direction = "right"
+	prints(player_target_direction)
 	pass
 
 ##Have the slime jump onto the player
