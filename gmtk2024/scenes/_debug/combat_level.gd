@@ -41,7 +41,7 @@ func _on_human_boss_hit_player():
 
 
 func _on_slime_player_hit_boss():
-	boss_health -= 20
+	boss_health -= 50
 	boss_healthbar.value = boss_health
 	if boss_health <= 0:
 		await get_tree().create_timer(1).timeout

@@ -138,6 +138,8 @@ debug_color = Color(0.897404, 0.272787, 0.415876, 0.42)
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -81)
 zoom = Vector2(2, 2)
+limit_left = 400
+limit_right = 1700
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="BiteBox" to="." method="_on_bite_box_body_entered"]
