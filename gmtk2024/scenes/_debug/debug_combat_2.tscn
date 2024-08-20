@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://b3mfm5iei23gr"]
+[gd_scene load_steps=11 format=4 uid="uid://b01nlse44ih0x"]
 
 [ext_resource type="Script" path="res://scenes/_debug/combat_level.gd" id="1_vdnfr"]
 [ext_resource type="PackedScene" uid="uid://ousmjixqox4h" path="res://scenes/_debug/debug_human.tscn" id="2_ko4ia"]
@@ -120,3 +120,4 @@ position = Vector2(939, 735)
 position = Vector2(1411, 784)
 
 [connection signal="hit_boss" from="Rat" to="." method="_on_rat_hit_boss"]
+[connection signal="hit_player" from="HumanBoss" to="." method="_on_human_boss_hit_player"]
