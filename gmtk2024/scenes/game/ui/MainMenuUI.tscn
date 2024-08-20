@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b4h6t3182l23y"]
+[gd_scene load_steps=14 format=3 uid="uid://b4h6t3182l23y"]
 
 [ext_resource type="Texture2D" uid="uid://v1x0hckwdk5d" path="res://scenes/game/ui/il_794xN.4974376048_f3z0.jpg" id="1_midmi"]
 [ext_resource type="Script" path="res://scenes/game/ui/main_menu_ui.gd" id="1_rym8g"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://scenes/game/ui/AnimationComponentExit.gd" id="5_gdhd6"]
 [ext_resource type="FontFile" uid="uid://d8860reaf3b4" path="res://assets/Ui/fonts/Crang (Title).ttf" id="9_w4e8e"]
 [ext_resource type="Texture2D" uid="uid://cgibb0e8la3dx" path="res://assets/Ui/backgrounds/wormo.png" id="10_gpf7a"]
+[ext_resource type="Texture2D" uid="uid://ck6p7hhp6c6ql" path="res://assets/Ui/GMTK_2024_Control_Scheme.png" id="11_claf0"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_elxg8"]
 
@@ -140,6 +141,19 @@ texture_filter = 3
 position = Vector2(955, 679)
 scale = Vector2(4, 4)
 texture = ExtResource("10_gpf7a")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 1
+offset_left = 56.0
+offset_top = 363.0
+offset_right = 1080.0
+offset_bottom = 939.0
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer"]
+layout_mode = 2
+texture = ExtResource("11_claf0")
+expand_mode = 2
 
 [connection signal="pressed" from="Start Game" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="Controls" to="." method="_on_controls_pressed"]
