@@ -31,5 +31,4 @@ func _on_rat_hit_boss():
 func _on_slime_boss_hit_player():
 	player_health -= 20
 	player_healthbar.value = player_health
-	boss.splash_box.disabled = true
 	pass # Replace with function body.

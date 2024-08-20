@@ -78,15 +78,25 @@ func jump_to():
 func drop_to():
 	attacking = false
 	attack_timer.start(attack_cooldown)
+	var hitbox_timer = null
+	if hitbox_timer == null:
+		hitbox_timer = get_tree().create_timer(2)
+		hitbox_timer.timeout.connect(disable_splashbox)
 	pass
 
+func disable_splashbox():
+	#print('disabling!')
+	splash_box.disabled = true
+	pass
 
 func _on_splash_box_body_entered(body):
 	#print(body)
+	
 	if splash_box.disabled == true:
 		pass
 	else:
 		hit_player.emit()
+		#disable_splashbox()
 	##use direction
 	if player_target_direction == "left":
 		velocity.x = 500
@@ -94,7 +104,6 @@ func _on_splash_box_body_entered(body):
 	else:
 		velocity.x = -500
 		player_target.velocity.x = 200
-
 	pass # Replace with function body.
 
 
