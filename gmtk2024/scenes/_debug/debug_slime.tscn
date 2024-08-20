@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://bb05mfdiart5b"]
+[gd_scene load_steps=16 format=4 uid="uid://bb05mfdiart5b"]
 
 [ext_resource type="Script" path="res://scenes/_debug/level_base.gd" id="1_b11iq"]
 [ext_resource type="Texture2D" uid="uid://byeocby82gq6u" path="res://assets/environment/slimeground.png" id="1_qw7kc"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://lq1qyt1nydoo" path="res://scenes/game/world/exit.tscn" id="8_6hr58"]
 [ext_resource type="PackedScene" uid="uid://clbj86jw7twd2" path="res://scenes/game/world/deathzone.tscn" id="9_ar3wb"]
 [ext_resource type="PackedScene" uid="uid://w5650xxpqq30" path="res://scenes/game/world/slimedrip.tscn" id="10_q0cc8"]
+[ext_resource type="Texture2D" uid="uid://contdt7eeh85b" path="res://assets/environment/slimebrain.png" id="11_n6pwt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kj5re"]
 texture = ExtResource("1_qw7kc")
@@ -145,7 +146,7 @@ texture = ExtResource("5_ojbcw")
 position = Vector2(108, -45)
 
 [node name="Exit" parent="." instance=ExtResource("8_6hr58")]
-position = Vector2(905, -482)
+position = Vector2(737, -956)
 
 [node name="Deathzone" parent="." instance=ExtResource("9_ar3wb")]
 position = Vector2(632, 138)
@@ -153,22 +154,30 @@ position = Vector2(632, 138)
 [node name="CollisionShape2D" parent="Deathzone" index="0"]
 position = Vector2(-101, 129.5)
 
-[node name="slimedrip" parent="Deathzone" instance=ExtResource("10_q0cc8")]
-position = Vector2(361, -440)
+[node name="slimedrip" parent="." instance=ExtResource("10_q0cc8")]
+position = Vector2(993, -302)
 
-[node name="slimedrip2" parent="Deathzone" instance=ExtResource("10_q0cc8")]
-position = Vector2(782, -346)
+[node name="slimedrip2" parent="." instance=ExtResource("10_q0cc8")]
+position = Vector2(1414, -208)
 
-[node name="slimedrip3" parent="Deathzone" instance=ExtResource("10_q0cc8")]
-position = Vector2(-26, -600)
+[node name="slimedrip3" parent="." instance=ExtResource("10_q0cc8")]
+position = Vector2(606, -462)
 
-[node name="slimedrip4" parent="Deathzone" instance=ExtResource("10_q0cc8")]
-position = Vector2(-81, -888)
+[node name="slimedrip4" parent="." instance=ExtResource("10_q0cc8")]
+position = Vector2(551, -750)
 
-[node name="slimedrip5" parent="Deathzone" instance=ExtResource("10_q0cc8")]
-position = Vector2(-158, -856)
+[node name="slimedrip5" parent="." instance=ExtResource("10_q0cc8")]
+position = Vector2(474, -718)
 
-[node name="slimedrip6" parent="Deathzone" instance=ExtResource("10_q0cc8")]
-position = Vector2(-534, -730)
+[node name="slimedrip6" parent="." instance=ExtResource("10_q0cc8")]
+position = Vector2(98, -592)
+
+[node name="Slimebrain" type="Sprite2D" parent="."]
+texture_filter = 3
+position = Vector2(728, -929)
+scale = Vector2(2, 2)
+texture = ExtResource("11_n6pwt")
+
+[connection signal="slime" from="slimedrip" to="." method="_on_slimedrip_slime"]
 
 [editable path="Deathzone"]

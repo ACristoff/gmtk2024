@@ -8,6 +8,7 @@ var player = null
 var timer_node = null
 var time_left = null
 var winCon = false
+var is_slime = false
 @onready var start = $Start
 @onready var exit = $Exit
 @onready var death_zone = $Deathzone
@@ -16,6 +17,7 @@ var winCon = false
 @onready var hud = null
 
 func _ready():
+	brian()
 	$Wormo.is_stage_rat = false
 	$Wormo.is_stage_slime = true
 	player = get_tree().get_first_node_in_group("player")
@@ -43,7 +45,18 @@ func _on_exit_body_entered(body):
 	winCon = true
 	#Load next level here
 	pass
+	
+func brian():
+	if is_slime == true:
+		var tween = create_tween()
+		tween.tween_property($Slimebrain, "scale", Vector2(2.2, 1.9), 2)
+		tween.tween_property($Slimebrain, "scale", Vector2(1.9, 2.2), 2)
+		tween.tween_callback(brian)
 
 func on_monster_touched_player(monster):
 	#print("touched by flea", monster)
 	pass
+
+
+func _on_slimedrip_slime() -> void:
+	is_slime = true
