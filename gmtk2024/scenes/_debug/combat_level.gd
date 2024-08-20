@@ -9,9 +9,12 @@ var winCon = false
 #@onready var death_zone = $Deathzone
 @onready var hurt_sfx = null
 @onready var hud = null
+var boss_health = 100
 
 func _ready():
 	player = get_tree().get_first_node_in_group("player")
+	if level_theme != null:
+		GlobalTheme.play_music_level(level_theme)
 	pass
 
 
@@ -30,8 +33,7 @@ func _ready():
 		#monster.touched_player.connect(on_monster_touched_player)
 	#death_zone.body_entered.connect(_on_deathzone_body_entered)
 	#exit.body_entered.connect(_on_exit_body_entered)
-	#if level_theme != null:
-		#GlobalTheme.play_music_level(level_theme)
+
 #
 #func _on_deathzone_body_entered(_body):
 	##print("oopsy woopsy!")

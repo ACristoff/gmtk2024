@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+class_name Boss
 
 @export var speed = 100
 @export var jump = 100
@@ -32,7 +32,7 @@ func walk_towards():
 		pass
 	else:
 		player_target_direction = "right"
-	prints(player_target_direction)
+	#prints(player_target_direction)
 	pass
 
 ##Have the slime jump onto the player

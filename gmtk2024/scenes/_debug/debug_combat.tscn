@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=4 uid="uid://bfidrrx06i5gh"]
+[gd_scene load_steps=10 format=4 uid="uid://bfidrrx06i5gh"]
 
 [ext_resource type="Script" path="res://scenes/_debug/combat_level.gd" id="1_1dj55"]
 [ext_resource type="Texture2D" uid="uid://byeocby82gq6u" path="res://assets/environment/slimeground.png" id="1_ce8m8"]
 [ext_resource type="PackedScene" uid="uid://57dkghi1trmf" path="res://scenes/game/world/start.tscn" id="2_isy11"]
+[ext_resource type="AudioStream" uid="uid://l2exny04js2o" path="res://assets/sounds/Music/Slime Fight.mp3" id="2_whi7e"]
 [ext_resource type="PackedScene" uid="uid://bdlisbe2q6yl2" path="res://scenes/game/characters/rat/rat.tscn" id="3_vjl3h"]
 [ext_resource type="PackedScene" uid="uid://bfn22b5yol6ty" path="res://scenes/game/characters/slime/slime_boss.tscn" id="4_6oa1b"]
 [ext_resource type="Texture2D" uid="uid://b6btthy6m7uqd" path="res://assets/environment/combatsewer.png" id="5_4wve1"]
@@ -63,6 +64,7 @@ sources/0 = SubResource("TileSetAtlasSource_ikic6")
 [node name="DebugCombat" type="Node2D"]
 position = Vector2(0, -1)
 script = ExtResource("1_1dj55")
+level_theme = ExtResource("2_whi7e")
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
 visible = false
