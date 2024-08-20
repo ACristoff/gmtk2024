@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://d4mjxqqfmtwhe"]
+[gd_scene load_steps=9 format=3 uid="uid://d4mjxqqfmtwhe"]
 
 [ext_resource type="Texture2D" uid="uid://3lk3i8202vu3" path="res://assets/Ui/backgrounds/9.png" id="1_papng"]
 [ext_resource type="Script" path="res://scenes/game/ui/game_over_ui.gd" id="1_v1a7x"]
+[ext_resource type="AudioStream" uid="uid://dtl8jj22eqjes" path="res://assets/sounds/Music/MP3/U WIN.mp3" id="2_n7xgm"]
 [ext_resource type="PackedScene" uid="uid://b4h6t3182l23y" path="res://scenes/game/ui/MainMenuUI.tscn" id="2_tcrca"]
 [ext_resource type="FontFile" uid="uid://cs8btg58u48y4" path="res://assets/Ui/fonts/Pixellari.ttf" id="3_474fu"]
 [ext_resource type="FontFile" uid="uid://beiumcvke46rr" path="res://assets/Ui/fonts/04B_30__.TTF" id="3_vi16l"]
@@ -17,6 +18,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_v1a7x")
+level_theme = ExtResource("2_n7xgm")
 next_level = ExtResource("2_tcrca")
 
 [node name="Background" type="TextureRect" parent="."]
@@ -39,6 +41,7 @@ theme_override_font_sizes/normal_font_size = 100
 text = "YOU WIN!"
 
 [node name="Restart" type="Button" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 1518.0
 offset_top = 782.0
@@ -85,3 +88,6 @@ text = "Main Menu"
 
 [node name="AnimationComponent" type="Node" parent="Main Menu2"]
 script = ExtResource("4_c4c8g")
+
+[connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Main Menu2" to="." method="_on_main_menu_2_pressed"]
