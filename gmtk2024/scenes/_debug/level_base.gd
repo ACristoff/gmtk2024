@@ -40,9 +40,13 @@ func reset_player():
 	player.global_position = start.get_spawn_pos()
 
 func _on_exit_body_entered(body):
-	prints("exit reached", body)
-	winCon = true
-	#Load next level here
+	if body is Player:
+		if next_level != null:
+			await get_tree().create_timer(1).timeout
+			get_tree().change_scene_to_packed(next_level)
+		else:
+			#show win screen here
+			pass
 	pass
 	
 func brian():
