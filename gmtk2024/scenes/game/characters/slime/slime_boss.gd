@@ -8,20 +8,13 @@ class_name Boss
 
 var player_target = null
 var player_target_direction = "left"
-var player_target_distance = 0
 
 var direction = 0
-var override_x = false
+var attacking = false
 
 func _ready():
 	var get_player = get_tree().get_first_node_in_group("player")
 	player_target = get_player
-	#if ((player_target.global_position.x - global_position.x) <  0):
-		#player_target_distance = global_position.x - player_target.global_position.x
-	#else:
-		#player_target_distance = player_target.global_position.x - global_position.x
-	player_target_distance = get_distance()
-	print(player_target_distance)
 
 func get_distance():
 	if ((player_target.global_position.x - global_position.x) <  0):
@@ -30,9 +23,9 @@ func get_distance():
 		return player_target.global_position.x - global_position.x
 
 func _physics_process(delta):
-	if is_on_floor() == false:
+	if is_on_floor() == false && attacking == false:
 		velocity.y += gravity * delta
-	else:
+	elif attacking == false:
 		walk_towards()
 	move_and_slide()
 	pass
@@ -47,11 +40,15 @@ func walk_towards():
 		player_target_direction = "right"
 		velocity.x = speed
 	if get_distance() > 200 && get_distance() < 320:
-		print('Attack!')
+		#print('Attack!')
+		attacking = true
+		velocity.x = 0
+		jump_to()
 	pass
 
 ##Have the slime jump onto the player
 func jump_to():
+	print('jumping to!')
 	pass
 
 #class_name MonsterMovement
